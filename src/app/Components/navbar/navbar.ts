@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrls: ['./navbar.css']
 })
 export class Navbar {
+  search = '';
+  get isRegistered(): boolean {
+    return !!localStorage.getItem('user');
+  }
 
+  constructor(private router: Router) {}
+
+  onSearch() {
+    this.router.navigate(['/products'], { queryParams: { search: this.search || null } });
+  }
 }

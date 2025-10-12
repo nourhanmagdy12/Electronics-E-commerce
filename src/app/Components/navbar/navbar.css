@@ -1,0 +1,43 @@
+.cyber-logo {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.input-group input {
+  background-color: #575757;
+  color: #fff;
+  border: none;
+}
+
+.input-group input::placeholder {
+  color: #bbb;
+}
+
+.input-group-text {
+  border: none;
+}
+
+.icon {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+ 
+@media (max-width: 768px) {
+  .input-group {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar form {
+    margin-top: 10px;
+  }
+}
+  

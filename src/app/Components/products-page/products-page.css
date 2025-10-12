@@ -1,0 +1,29 @@
+.heart path {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.heart[fill="rgb(232, 7, 7)"] {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+.sort-container select {
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: all 0.2s ease;
+}
+
+.sort-container select:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 0.15rem rgba(0,0,0,0.2);
+}
+.sort-container label {
+  font-weight: 500;
+  margin-right: 10px;
+}

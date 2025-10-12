@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+body {
+  background: #fafbfc;
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  color: #222;
+}
+.cyber-logo {
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+.card {
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  background: #fff;
+  color: #222;
+  border: none;
+}
+.card-img-top {
+  background: #f6f6f6;
+  border-radius: 1rem 1rem 0 0;
+}
+.btn-dark, .btn-outline-dark {
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.btn-dark {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+.btn-dark:hover {
+  background: #000;
+}
+input.form-control, .form-select {
+  border-radius: 12px;
+  background: #f6f6f6;
+  border: 1px solid #e0e0e0;
+}
+input.form-control:focus, .form-select:focus {
+  border-color: #222;
+  box-shadow: none;
+}
+
+.footer {
+  font-size: 0.95rem;
+}
+.footer .bi {
+  font-size: 1.2rem;
+  color: #222;
+}
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: row !important;
+    gap: 1rem;
+  }
+  .footer .row > div {
+    margin-bottom: 2rem;
+  }
+}
+
+
+.btn-shop{
+
+  width: fit-content;
+  padding: 16px 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+}

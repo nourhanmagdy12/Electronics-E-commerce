@@ -1,0 +1,1754 @@
+{
+  "categories": [
+    {
+      "category_id": 1,
+      "category_name": "Phones",
+      "icon": "fa-solid fa-mobile-screen-button"
+    },
+    {
+      "category_id": 2,
+      "category_name": "Smart Watches",
+      "icon": "fa-solid fa-clock"
+    },
+    {
+      "category_id": 3,
+      "category_name": "Cameras",
+      "icon": "fa-solid fa-camera"
+    },
+    {
+      "category_id": 4,
+      "category_name": "Headphones",
+      "icon": "fa-solid fa-headphones"
+    },
+    {
+      "category_id": 5,
+      "category_name": "Computers",
+      "icon": "fa-solid fa-laptop"
+    },
+    {
+      "category_id": 6,
+      "category_name": "Gaming",
+      "icon": "fa-solid fa-gamepad"
+    }
+  ],
+  "users": [
+    {
+      "user_id": "1",
+      "username": "Nourhan",
+      "email": "nourhan@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Apple iPhone 16 Pro Max 512GB",
+      "price": 1499.99,
+      "rating": 4.8,
+      "reviews_count": 3210,
+      "description": "The pinnacle of mobile technology with a cinematic camera and A18 Pro chip.",
+      "image_url": "1.jpg",
+      "category_id": 1,
+      "manufacturer": "Apple",
+      "model_number": "A2849",
+      "full_description": "Experience the future of mobile with the stunning 6.9-inch ProMotion display and the all-new A18 Pro chip. Its triple-lens camera system delivers unmatched photo and video quality, making every shot a masterpiece.",
+      "specifications_json": {
+        "Display": "6.9\" ProMotion XDR",
+        "Chip": "A18 Pro",
+        "Storage": "512GB",
+        "Camera": "48MP Main, 48MP Ultra-Wide, 12MP Telephoto"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Google Pixel 9 Pro 256GB",
+      "price": 999,
+      "rating": 4.7,
+      "reviews_count": 2580,
+      "description": "AI-powered phone with the best-in-class computational photography.",
+      "image_url": "2.jpg",
+      "category_id": 1,
+      "manufacturer": "Google",
+      "model_number": "GP9P-A1",
+      "full_description": "The Google Pixel 9 Pro leverages the power of the Tensor G4 chip to bring you revolutionary AI features, real-time translation, and an unparalleled mobile photography experience that automatically enhances your images.",
+      "specifications_json": {
+        "Display": "6.8\" Super Actua OLED",
+        "Chip": "Tensor G4",
+        "RAM": "12GB",
+        "Camera": "50MP Main, 48MP Ultra-Wide, 48MP Telephoto"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Samsung Galaxy S25 Ultra 1TB",
+      "price": 1599.99,
+      "rating": 4.9,
+      "reviews_count": 4120,
+      "description": "The ultimate Android flagship with S Pen support and massive zoom.",
+      "image_url": "3.jpg",
+      "category_id": 1,
+      "manufacturer": "Samsung",
+      "model_number": "SM-S998Z",
+      "full_description": "The S25 Ultra is the ultimate Android powerhouse. It features a new, advanced space zoom system, integrated S Pen for productivity, and a massive battery to power through the day. Built with a durable titanium frame.",
+      "specifications_json": {
+        "Display": "6.8\" Dynamic AMOLED 2X",
+        "Chip": "Snapdragon 8 Gen 5",
+        "Storage": "1TB",
+        "Camera": "200MP Main, 10x Optical Zoom"
+      }
+    },
+    {
+      "id": "4",
+      "name": "OnePlus 12T 5G",
+      "price": 799,
+      "rating": 4.6,
+      "reviews_count": 1850,
+      "description": "Fast charging and stunning display for power users.",
+      "image_url": "4.jpg",
+      "category_id": 1,
+      "manufacturer": "OnePlus",
+      "model_number": "OP-12T-NA",
+      "full_description": "The OnePlus 12T offers blistering charging speeds and a silky-smooth 120Hz Fluid AMOLED display. It's designed for speed and sustained performance, making it a great choice for mobile gaming and heavy use.",
+      "specifications_json": {
+        "Display": "6.7\" Fluid AMOLED",
+        "Chip": "Snapdragon 8 Gen 4",
+        "RAM": "16GB",
+        "Charging": "120W SUPERVOOC"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Xiaomi 14 Pro 512GB",
+      "price": 899.5,
+      "rating": 4.5,
+      "reviews_count": 1200,
+      "description": "Professional-grade camera system in a sleek design.",
+      "image_url": "5.jpg",
+      "category_id": 1,
+      "manufacturer": "Xiaomi",
+      "model_number": "X-14P-C2",
+      "full_description": "Featuring a powerful camera co-engineered with Leica, the Xiaomi 14 Pro delivers stunning clarity and color accuracy. Its sleek ceramic body provides a premium feel and enhanced durability.",
+      "specifications_json": {
+        "Display": "6.7\" LTPO AMOLED",
+        "Chip": "Snapdragon 8 Gen 4",
+        "Storage": "512GB",
+        "Camera": "50MP Main (Leica)"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Nothing Phone (3)",
+      "price": 650,
+      "rating": 4.3,
+      "reviews_count": 980,
+      "description": "Unique transparent design with glyph interface and smooth performance.",
+      "image_url": "6.jpg",
+      "category_id": 1,
+      "manufacturer": "Nothing",
+      "model_number": "NP3-01",
+      "full_description": "The Nothing Phone (3) continues the brand's unique aesthetic with a refined Glyph Interface. It focuses on a clean Android experience with intuitive AI features and robust mid-range performance.",
+      "specifications_json": {
+        "Display": "6.5\" 120Hz OLED",
+        "Chip": "Snapdragon 8+ Gen 2",
+        "RAM": "12GB",
+        "Feature": "Glyph Interface"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Motorola Edge 40 Neo",
+      "price": 450,
+      "rating": 4.1,
+      "reviews_count": 550,
+      "description": "Mid-range phone with premium curved display and excellent battery life.",
+      "image_url": "7.jpg",
+      "category_id": 1,
+      "manufacturer": "Motorola",
+      "model_number": "ME40-NEO",
+      "full_description": "A stylish and comfortable mid-range phone. The Motorola Edge 40 Neo boasts a beautiful curved pOLED display and an IP68 rating, offering flagship features at an accessible price point.",
+      "specifications_json": {
+        "Display": "6.55\" pOLED 144Hz",
+        "Chip": "MediaTek Dimensity 920",
+        "RAM": "8GB",
+        "Water Resistance": "IP68"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Samsung Galaxy Z Fold6",
+      "price": 1799,
+      "rating": 4.5,
+      "reviews_count": 650,
+      "description": "Next-generation foldable display for seamless multitasking.",
+      "image_url": "8.jpg",
+      "category_id": 1,
+      "manufacturer": "Samsung",
+      "model_number": "SM-F960F",
+      "full_description": "The Galaxy Z Fold6 refines the foldable experience with a thinner, lighter hinge and a broader cover screen. It’s a powerful productivity tool that transitions seamlessly from phone to tablet.",
+      "specifications_json": {
+        "Main Display": "7.6\" Foldable AMOLED",
+        "Cover Display": "6.2\" AMOLED",
+        "Chip": "Snapdragon 8 Gen 4",
+        "Form Factor": "Foldable"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Apple iPhone 15 Standard 128GB",
+      "price": 799,
+      "rating": 4.6,
+      "reviews_count": 1550,
+      "description": "Durable design and powerful A16 Bionic chip.",
+      "image_url": "9.avif",
+      "category_id": 1,
+      "manufacturer": "Apple",
+      "model_number": "A2846",
+      "full_description": "The standard iPhone 15 features the dynamic island, a great dual-camera system, and the powerful A16 Bionic chip. It provides premium performance and quality for everyday use.",
+      "specifications_json": {
+        "Display": "6.1\" Super Retina XDR",
+        "Chip": "A16 Bionic",
+        "Storage": "128GB",
+        "Feature": "Dynamic Island"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Google Pixel 8a",
+      "price": 499,
+      "rating": 4.7,
+      "reviews_count": 1100,
+      "description": "Affordable AI phone with the signature Pixel camera quality.",
+      "image_url": "10.avif",
+      "category_id": 1,
+      "manufacturer": "Google",
+      "model_number": "GP8A-C1",
+      "full_description": "The Pixel 8a brings Google's best AI features and signature computational photography to a more budget-friendly device. It's the perfect entry point into the Pixel ecosystem.",
+      "specifications_json": {
+        "Display": "6.1\" Actua OLED 120Hz",
+        "Chip": "Tensor G3",
+        "RAM": "8GB",
+        "Camera": "64MP Main"
+      }
+    },
+    {
+      "id": "11",
+      "name": "Nokia G400 5G",
+      "price": 249,
+      "rating": 4.2,
+      "reviews_count": 750,
+      "description": "Reliable budget 5G phone with a high-refresh-rate display.",
+      "image_url": "phone-11.webp",
+      "category_id": 1,
+      "manufacturer": "Nokia",
+      "model_number": "NK-G400-5G",
+      "full_description": "A durable and reliable budget 5G phone, the Nokia G400 features a 120Hz refresh rate display for smooth scrolling, making it a great value proposition for a daily driver.",
+      "specifications_json": {
+        "Display": "6.6\" LCD 120Hz",
+        "Chip": "Snapdragon 480 5G",
+        "RAM": "6GB",
+        "Battery": "5000mAh"
+      }
+    },
+    {
+      "id": "12",
+      "name": "Sony Xperia 1 VI",
+      "price": 1199.99,
+      "rating": 4.4,
+      "reviews_count": 450,
+      "description": "Professional cinema camera in a smartphone body.",
+      "image_url": "phone-12.webp",
+      "category_id": 1,
+      "manufacturer": "Sony",
+      "model_number": "XQ-EC72",
+      "full_description": "Designed for content creators, the Sony Xperia 1 VI boasts a true 4K HDR OLED display and a camera app designed with professional alpha-camera features, offering unparalleled control over video and photography.",
+      "specifications_json": {
+        "Display": "6.5\" 4K HDR OLED 120Hz",
+        "Chip": "Snapdragon 8 Gen 4",
+        "Camera": "Triple 12MP (Zeiss Optics)",
+        "Audio": "3.5mm Headphone Jack"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Asus ROG Phone 8 Pro",
+      "price": 1099,
+      "rating": 4.9,
+      "reviews_count": 800,
+      "description": "Ultimate gaming smartphone with advanced cooling system.",
+      "image_url": "phone-13.webp",
+      "category_id": 1,
+      "manufacturer": "Asus",
+      "model_number": "AI2202",
+      "full_description": "The ROG Phone 8 Pro is engineered for elite mobile gaming with dedicated AirTriggers, advanced cooling, and a massive battery. It's built for those who take mobile esports seriously.",
+      "specifications_json": {
+        "Display": "6.78\" AMOLED 165Hz",
+        "Chip": "Snapdragon 8 Gen 4",
+        "RAM": "24GB",
+        "Feature": "AirTrigger Buttons"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Red Magic 9 Pro",
+      "price": 750,
+      "rating": 4.7,
+      "reviews_count": 420,
+      "description": "Dedicated cooling fan and shoulder triggers for intense gaming.",
+      "image_url": "phone-14.webp",
+      "category_id": 1,
+      "manufacturer": "Nubia",
+      "model_number": "NX769J",
+      "full_description": "The Red Magic 9 Pro includes a built-in cooling fan and seamless shoulder triggers. This device is purely focused on delivering the highest possible frame rates and performance for intense, prolonged gaming sessions.",
+      "specifications_json": {
+        "Display": "6.8\" AMOLED (no notch)",
+        "Chip": "Snapdragon 8 Gen 4",
+        "Cooling": "Built-in Fan",
+        "Triggers": "Shoulder Triggers"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Samsung Galaxy A55 5G",
+      "price": 420,
+      "rating": 4.4,
+      "reviews_count": 910,
+      "description": "Excellent mid-range AMOLED display and solid all-day performance.",
+      "image_url": "phone-15.webp",
+      "category_id": 1,
+      "manufacturer": "Samsung",
+      "model_number": "SM-A556E",
+      "full_description": "A stylish and feature-packed mid-range 5G phone. The Galaxy A55 provides a stunning Super AMOLED display, reliable performance, and a durable design with an IP67 rating.",
+      "specifications_json": {
+        "Display": "6.6\" Super AMOLED 120Hz",
+        "Chip": "Exynos 1480",
+        "RAM": "8GB",
+        "Water Resistance": "IP67"
+      }
+    },
+    {
+      "id": "16",
+      "name": "Apple Watch X Ultra",
+      "price": 799,
+      "rating": 4.9,
+      "reviews_count": 1500,
+      "description": "Rugged sports watch with precision GPS and multi-day battery.",
+      "image_url": "watch-1.webp",
+      "category_id": 2,
+      "manufacturer": "Apple",
+      "model_number": "WatchX-49mm",
+      "full_description": "The Watch X Ultra is built for endurance, featuring an aerospace-grade titanium case, a brighter display, and the most accurate multi-band GPS for tracking extreme activities. Water resistant up to 100m.",
+      "specifications_json": {
+        "Case Size": "49mm",
+        "Material": "Titanium",
+        "GPS": "Dual-frequency L1 and L5",
+        "Battery Life": "Up to 3 days (Low Power Mode)"
+      }
+    },
+    {
+      "id": "17",
+      "name": "Samsung Galaxy Watch 7 Classic",
+      "price": 499,
+      "rating": 4.7,
+      "reviews_count": 1120,
+      "description": "Premium health monitor with rotating bezel and Wear OS.",
+      "image_url": "watch-2.webp",
+      "category_id": 2,
+      "manufacturer": "Samsung",
+      "model_number": "SM-R960",
+      "full_description": "The Galaxy Watch 7 Classic combines a timeless aesthetic with cutting-edge health technology, including ECG, BIA analysis, and advanced sleep coaching. The signature rotating physical bezel provides intuitive navigation.",
+      "specifications_json": {
+        "Case Size": "47mm",
+        "OS": "Wear OS powered by Samsung",
+        "Sensors": "ECG, BIA, Temperature",
+        "Water Resistance": "IP68, 5ATM"
+      }
+    },
+    {
+      "id": "18",
+      "name": "Google Pixel Watch 3",
+      "price": 349,
+      "rating": 4.5,
+      "reviews_count": 880,
+      "description": "Sleek design with deep Fitbit integration and Google AI features.",
+      "image_url": "watch-3.webp",
+      "category_id": 2,
+      "manufacturer": "Google",
+      "model_number": "GW3-A1",
+      "full_description": "The Pixel Watch 3 is Google's newest wearable, offering a clean, modern design, seamless integration with Android, and deep fitness tracking powered by Fitbit. It's the smart watch for the minimalist.",
+      "specifications_json": {
+        "Case Size": "41mm",
+        "OS": "Wear OS 5",
+        "Sensors": "ECG, Continuous HR",
+        "Integration": "Fitbit Premium"
+      }
+    },
+    {
+      "id": "19",
+      "name": "Garmin Fenix 8 Pro Solar",
+      "price": 950,
+      "rating": 4.9,
+      "reviews_count": 620,
+      "description": "Solar-powered multisport GPS watch for extreme athletes.",
+      "image_url": "watch-4.webp",
+      "category_id": 2,
+      "manufacturer": "Garmin",
+      "model_number": "010-02804-01",
+      "full_description": "The Fenix 8 Pro Solar is a rugged multisport GPS watch with solar charging capability, extending battery life for months. Perfect for adventurers and endurance athletes who need reliable navigation and performance metrics.",
+      "specifications_json": {
+        "Display": "Solar-charged Power Sapphire",
+        "Material": "Titanium",
+        "GPS": "Multi-Band GPS",
+        "Battery Life": "Endless (in Smartwatch Mode with sufficient sun)"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Fitbit Charge 7 Fitness Tracker",
+      "price": 149.99,
+      "rating": 4.6,
+      "reviews_count": 1300,
+      "description": "Advanced sleep tracking and stress management.",
+      "image_url": "watch-5.webp",
+      "category_id": 2,
+      "manufacturer": "Fitbit",
+      "model_number": "FB-C7T",
+      "full_description": "The Charge 7 is a slim, easy-to-use fitness tracker. It provides essential health metrics, including stress management scores, heart rate monitoring, and detailed sleep analysis, all day long.",
+      "specifications_json": {
+        "Type": "Fitness Tracker",
+        "Screen": "AMOLED Touchscreen",
+        "Features": "EDA Stress Scan, HR Monitoring",
+        "Battery Life": "Up to 7 days"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Huawei Watch GT 4 Pro",
+      "price": 399,
+      "rating": 4.5,
+      "reviews_count": 510,
+      "description": "Elegant design with 14-day battery life and comprehensive health tracking.",
+      "image_url": "watch-6.webp",
+      "category_id": 2,
+      "manufacturer": "Huawei",
+      "model_number": "GT4P-46MM",
+      "full_description": "An elegant smartwatch that emphasizes style and long battery life. The Huawei Watch GT 4 Pro offers robust health monitoring and over 100 workout modes, all within a beautifully crafted stainless steel case.",
+      "specifications_json": {
+        "Case Size": "46mm",
+        "Material": "Stainless Steel",
+        "Battery Life": "Up to 14 days",
+        "OS": "HarmonyOS"
+      }
+    },
+    {
+      "id": "22",
+      "name": "Fossil Gen 7 Smartwatch",
+      "price": 299,
+      "rating": 4.2,
+      "reviews_count": 410,
+      "description": "Classic analog look with modern smart features.",
+      "image_url": "watch-7.webp",
+      "category_id": 2,
+      "manufacturer": "Fossil",
+      "model_number": "FTW7011",
+      "full_description": "The Gen 7 Smartwatch maintains the classic look of a traditional timepiece while incorporating modern smartwatch functionality, running on Google's Wear OS for a wide range of apps and features.",
+      "specifications_json": {
+        "Type": "Hybrid Smartwatch",
+        "OS": "Wear OS",
+        "Connectivity": "Bluetooth 5.0, Wi-Fi",
+        "Design": "Classic Analog Hands"
+      }
+    },
+    {
+      "id": "23",
+      "name": "Casio G-Shock Rangeman GPR-H1000",
+      "price": 500,
+      "rating": 4.8,
+      "reviews_count": 350,
+      "description": "Extreme durability and environmental data tracking.",
+      "image_url": "watch-8.webp",
+      "category_id": 2,
+      "manufacturer": "Casio",
+      "model_number": "GPRH1000",
+      "full_description": "Part of the legendary G-Shock line, the Rangeman is tough as nails, featuring mud resistance, shock resistance, and a variety of environmental sensors, making it the ultimate survival watch.",
+      "specifications_json": {
+        "Material": "Resin, Ceramic",
+        "Sensors": "Barometer, Altimeter, Compass, Thermometer",
+        "Resistance": "Shock, Mud, 200m Water",
+        "GPS": "Built-in"
+      }
+    },
+    {
+      "id": "24",
+      "name": "Whoop 5.0 Recovery Tracker",
+      "price": 25,
+      "rating": 4.6,
+      "reviews_count": 700,
+      "description": "Subscription-based band focused solely on recovery and strain.",
+      "image_url": "watch-9.webp",
+      "category_id": 2,
+      "manufacturer": "Whoop",
+      "model_number": "WP5-0",
+      "full_description": "The Whoop 5.0 is a screenless fitness tracker focused purely on collecting actionable data on strain, sleep, and recovery. It is popular among elite athletes and those serious about optimizing health.",
+      "specifications_json": {
+        "Type": "Screenless Tracker",
+        "Focus": "Recovery, Sleep, Strain",
+        "Battery Life": "Up to 5 days",
+        "Service": "Subscription Required"
+      }
+    },
+    {
+      "id": "25",
+      "name": "Amazfit Balance",
+      "price": 229,
+      "rating": 4.4,
+      "reviews_count": 390,
+      "description": "Lightweight watch with focus on mental and physical readiness.",
+      "image_url": "watch-10.webp",
+      "category_id": 2,
+      "manufacturer": "Amazfit",
+      "model_number": "A2287",
+      "full_description": "The Amazfit Balance focuses on the holistic view of health, providing insights into your mental and physical readiness. It features a bright AMOLED display and long-lasting battery life.",
+      "specifications_json": {
+        "Display": "1.5\" AMOLED",
+        "OS": "Zepp OS 2.0",
+        "Features": "Body Composition, Mental Readiness Score",
+        "Battery Life": "Up to 14 days"
+      }
+    },
+    {
+      "id": "26",
+      "name": "Suunto Vertical Titanium",
+      "price": 799,
+      "rating": 4.7,
+      "reviews_count": 250,
+      "description": "Off-grid maps and massive battery for long expeditions.",
+      "image_url": "watch-11.webp",
+      "category_id": 2,
+      "manufacturer": "Suunto",
+      "model_number": "SS050961000",
+      "full_description": "A durable watch for mountain and trail running, the Suunto Vertical Titanium provides free outdoor maps and a massive battery. The titanium bezel makes it lightweight yet extremely durable.",
+      "specifications_json": {
+        "Material": "Titanium Bezel",
+        "GPS": "Dual-Band GPS",
+        "Maps": "Offline Outdoor Maps",
+        "Battery Life": "60 days (Time Mode)"
+      }
+    },
+    {
+      "id": "27",
+      "name": "Xiaomi Watch S3",
+      "price": 199,
+      "rating": 4.3,
+      "reviews_count": 310,
+      "description": "Stylish budget option with interchangeable bezels.",
+      "image_url": "watch-12.webp",
+      "category_id": 2,
+      "manufacturer": "Xiaomi",
+      "model_number": "XM-S3",
+      "full_description": "The Xiaomi Watch S3 is a budget-friendly option that doesn't compromise on style. It features a large, bright display and a wide variety of fitness modes, with a unique interchangeable bezel design.",
+      "specifications_json": {
+        "Display": "1.43\" AMOLED",
+        "Features": "Interchangeable Bezel",
+        "Fitness Modes": "150+",
+        "Battery Life": "Up to 15 days"
+      }
+    },
+    {
+      "id": "28",
+      "name": "Polar Vantage V3",
+      "price": 599,
+      "rating": 4.6,
+      "reviews_count": 210,
+      "description": "Pro-level training and recovery metrics for runners.",
+      "image_url": "watch-13.webp",
+      "category_id": 2,
+      "manufacturer": "Polar",
+      "model_number": "900110899",
+      "full_description": "The Polar Vantage V3 is a pro-level training tool for athletes. It offers advanced recovery metrics, running power tracking, and a bright AMOLED display for clear viewing during intense workouts.",
+      "specifications_json": {
+        "Display": "AMOLED",
+        "Tracking": "Running Power, Recovery Pro",
+        "Sensors": "ECG, SpO2",
+        "GPS": "Dual-Band GPS"
+      }
+    },
+    {
+      "id": "29",
+      "name": "Withings ScanWatch 2",
+      "price": 349,
+      "rating": 4.8,
+      "reviews_count": 300,
+      "description": "Hybrid watch with ECG, temperature, and medical-grade sensors.",
+      "image_url": "watch-14.webp",
+      "category_id": 2,
+      "manufacturer": "Withings",
+      "model_number": "HWA10",
+      "full_description": "A stylish hybrid smartwatch that looks like a traditional watch but monitors your health with clinical precision. It features an ECG, a temperature sensor, and advanced sleep apnea detection.",
+      "specifications_json": {
+        "Type": "Hybrid Smartwatch",
+        "Sensors": "ECG, Temperature, Oximeter",
+        "Water Resistance": "5ATM",
+        "Health Feature": "Sleep Apnea Detection"
+      }
+    },
+    {
+      "id": "30",
+      "name": "Apple Watch SE 2nd Gen",
+      "price": 249,
+      "rating": 4.5,
+      "reviews_count": 1800,
+      "description": "The best entry-level Apple Watch for daily fitness and notifications.",
+      "image_url": "watch-15.webp",
+      "category_id": 2,
+      "manufacturer": "Apple",
+      "model_number": "A2723",
+      "full_description": "The Apple Watch SE is the best entry-level Apple Watch, providing essential fitness tracking, safety features like crash detection, and seamless connectivity within the Apple ecosystem at an affordable price.",
+      "specifications_json": {
+        "Case Size": "40mm / 44mm",
+        "Chip": "S8 SiP",
+        "Features": "Crash Detection, Fall Detection",
+        "Connectivity": "GPS Only/GPS + Cellular"
+      }
+    },
+    {
+      "id": "31",
+      "name": "Sony Alpha A7 V Full-Frame Mirrorless",
+      "price": 2999,
+      "rating": 4.9,
+      "reviews_count": 750,
+      "description": "Flagship mirrorless camera for professional photo and video.",
+      "image_url": "camera-1.webp",
+      "category_id": 3,
+      "manufacturer": "Sony",
+      "model_number": "ILCE-A7M5",
+      "full_description": "The A7 V is a photographer's dream, featuring a new 61MP Exmor R sensor, 8K video recording, and a revolutionary AI-powered autofocus system that tracks subjects with unparalleled speed and accuracy across the frame.",
+      "specifications_json": {
+        "Sensor": "61MP Full-Frame",
+        "Video": "8K 30p, 4K 120p",
+        "Stabilization": "5-axis In-body",
+        "Screen": "3.2\" Vari-angle Touchscreen"
+      }
+    },
+    {
+      "id": "32",
+      "name": "Canon EOS R6 Mark II Hybrid Camera",
+      "price": 2499,
+      "rating": 4.8,
+      "reviews_count": 620,
+      "description": "Versatile hybrid shooter with exceptional autofocus.",
+      "image_url": "camera-2.webp",
+      "category_id": 3,
+      "manufacturer": "Canon",
+      "model_number": "EOSR6MK2",
+      "full_description": "The EOS R6 Mark II is a versatile hybrid camera offering exceptional speed and low-light performance. It boasts 40 fps mechanical shutter and advanced subject-recognition AF, making it perfect for wildlife and sports.",
+      "specifications_json": {
+        "Sensor": "24.2MP Full-Frame",
+        "Video": "4K 60p Oversampled",
+        "Shooting Speed": "40 fps (Electronic)",
+        "Lens Mount": "RF Mount"
+      }
+    },
+    {
+      "id": "33",
+      "name": "Nikon Z8 Professional Mirrorless",
+      "price": 3799,
+      "rating": 4.9,
+      "reviews_count": 450,
+      "description": "High-resolution sensor and blazing-fast continuous shooting.",
+      "image_url": "camera-3.webp",
+      "category_id": 3,
+      "manufacturer": "Nikon",
+      "model_number": "NikonZ8",
+      "full_description": "The Nikon Z8 is a professional-grade mirrorless body that packs the core features of the flagship Z9 into a more compact form factor. It delivers high-resolution stills and broadcast-quality video.",
+      "specifications_json": {
+        "Sensor": "45.7MP Stacked CMOS",
+        "Video": "8K 60p, 4K 120p",
+        "Form Factor": "Professional Mirrorless",
+        "Weather Sealing": "Extensive"
+      }
+    },
+    {
+      "id": "34",
+      "name": "Fujifilm X-T5 Classic APS-C",
+      "price": 1699,
+      "rating": 4.7,
+      "reviews_count": 510,
+      "description": "Retro design with stunning film simulations and portable body.",
+      "image_url": "camera-4.webp",
+      "category_id": 3,
+      "manufacturer": "Fujifilm",
+      "model_number": "X-T5",
+      "full_description": "The X-T5 blends retro design with modern imaging tech. Its 40.2MP APS-C sensor and powerful film simulations provide unique and stunning image quality, loved by street and documentary photographers.",
+      "specifications_json": {
+        "Sensor": "40.2MP APS-C",
+        "Video": "6.2K 30p",
+        "Design": "Dials and Analog Controls",
+        "Film Modes": "19 Film Simulations"
+      }
+    },
+    {
+      "id": "35",
+      "name": "DJI Osmo Pocket 4 Vlogging Cam",
+      "price": 499,
+      "rating": 4.6,
+      "reviews_count": 850,
+      "description": "Ultra-compact 4K gimbal camera for on-the-go content creation.",
+      "image_url": "camera-5.webp",
+      "category_id": 3,
+      "manufacturer": "DJI",
+      "model_number": "OP4-Combo",
+      "full_description": "Capture life's moments in buttery-smooth 4K/60fps with the Osmo Pocket 4. Its small form factor and 3-axis mechanical stabilization make it the perfect vlogging and travel camera. Features ActiveTrack 6.0 for intelligent tracking.",
+      "specifications_json": {
+        "Resolution": "4K/60fps",
+        "Stabilization": "3-Axis Gimbal",
+        "Sensor Size": "1-inch CMOS",
+        "Features": "ActiveTrack 6.0, Pocket-sized"
+      }
+    },
+    {
+      "id": "36",
+      "name": "GoPro HERO 13 Black Action Cam",
+      "price": 599,
+      "rating": 4.5,
+      "reviews_count": 920,
+      "description": "Next-level image stabilization and rugged waterproof design.",
+      "image_url": "camera-6.webp",
+      "category_id": 3,
+      "manufacturer": "GoPro",
+      "model_number": "HERO13",
+      "full_description": "The HERO 13 Black pushes the boundaries of action camera technology with HyperSmooth 6.0 stabilization and a larger sensor for cinematic video. It's rugged, waterproof, and ready for any adventure.",
+      "specifications_json": {
+        "Video": "5.3K 60fps, 4K 120fps",
+        "Stabilization": "HyperSmooth 6.0",
+        "Durability": "Waterproof to 10m",
+        "Feature": "Horizon Lock"
+      }
+    },
+    {
+      "id": "37",
+      "name": "Sony ZV-E10 Vlogger Camera",
+      "price": 799,
+      "rating": 4.5,
+      "reviews_count": 780,
+      "description": "Dedicated vlogging camera with interchangeable lenses and great audio.",
+      "image_url": "camera-7.webp",
+      "category_id": 3,
+      "manufacturer": "Sony",
+      "model_number": "ZV-E10",
+      "full_description": "Designed specifically for vloggers and content creators, the ZV-E10 features a Product Showcase setting, Background Defocus mode, and a side-articulating screen, making it easy to create professional-looking videos.",
+      "specifications_json": {
+        "Sensor": "24.2MP APS-C",
+        "Screen": "Side-Articulating LCD",
+        "Features": "Product Showcase Setting",
+        "Audio": "Directional 3-Capsule Mic"
+      }
+    },
+    {
+      "id": "38",
+      "name": "Insta360 Ace Pro Action Camera",
+      "price": 449,
+      "rating": 4.4,
+      "reviews_count": 410,
+      "description": "AI-powered action camera with massive sensor and flip screen.",
+      "image_url": "camera-8.webp",
+      "category_id": 3,
+      "manufacturer": "Insta360",
+      "model_number": "ACEPRO",
+      "full_description": "The Ace Pro is an AI-powered action camera co-engineered with Leica. Its large sensor captures vivid detail even in low light, and the flip screen allows for easy framing whether shooting forward or backward.",
+      "specifications_json": {
+        "Sensor": "1/1.3\" Sensor (Leica)",
+        "Video": "4K 120fps",
+        "Screen": "Flip Touchscreen",
+        "Features": "AI Highlights Assistant"
+      }
+    },
+    {
+      "id": "39",
+      "name": "Polaroid Go Instant Camera",
+      "price": 99,
+      "rating": 4.3,
+      "reviews_count": 600,
+      "description": "Pocket-sized analog instant film camera.",
+      "image_url": "camera-9.webp",
+      "category_id": 3,
+      "manufacturer": "Polaroid",
+      "model_number": "GO-02",
+      "full_description": "The Polaroid Go is the world's smallest instant analog camera. It's perfectly portable and ready to capture your moments on its unique, compact instant film, featuring a self-timer and selfie mirror.",
+      "specifications_json": {
+        "Type": "Instant Analog",
+        "Film": "Polaroid Go Film",
+        "Size": "Pocket-sized",
+        "Features": "Selfie Mirror, Self-timer"
+      }
+    },
+    {
+      "id": "40",
+      "name": "Olympus OM System OM-1 Mark II",
+      "price": 2399,
+      "rating": 4.8,
+      "reviews_count": 320,
+      "description": "Weather-sealed Micro Four Thirds for nature photography.",
+      "image_url": "camera-10.webp",
+      "category_id": 3,
+      "manufacturer": "Olympus OM System",
+      "model_number": "OM-1-M2",
+      "full_description": "The OM System OM-1 Mark II is a Micro Four Thirds powerhouse, built with incredible weather sealing for shooting in harsh conditions. It excels in high-speed, handheld shooting for nature and action photography.",
+      "specifications_json": {
+        "Sensor": "20.4MP Micro Four Thirds",
+        "Stabilization": "8.5 Stop IBIS",
+        "Video": "4K 60p 10-bit",
+        "Weather Sealing": "IP53-rated"
+      }
+    },
+    {
+      "id": "41",
+      "name": "Pentax K-3 Mark III DSLR",
+      "price": 1999,
+      "rating": 4.5,
+      "reviews_count": 180,
+      "description": "Classic DSLR feel with a modern, high-resolution sensor.",
+      "image_url": "camera-11.webp",
+      "category_id": 3,
+      "manufacturer": "Pentax",
+      "model_number": "K-3M3",
+      "full_description": "A classic DSLR experience updated for the modern era. The Pentax K-3 Mark III retains the optical viewfinder and robust feel of a traditional camera, with a high-resolution sensor and advanced Shake Reduction system.",
+      "specifications_json": {
+        "Sensor": "25.7MP APS-C (AA Filterless)",
+        "Type": "DSLR",
+        "Viewfinder": "Optical Pentaprism",
+        "Feature": "In-body SR II"
+      }
+    },
+    {
+      "id": "42",
+      "name": "Canon PowerShot G7 X Mark III",
+      "price": 749,
+      "rating": 4.3,
+      "reviews_count": 390,
+      "description": "Compact camera popular for streaming and YouTube Vlogging.",
+      "image_url": "camera-12.webp",
+      "category_id": 3,
+      "manufacturer": "Canon",
+      "model_number": "G7X-M3",
+      "full_description": "The PowerShot G7 X Mark III is a compact, high-quality camera popular among vloggers. It offers 4K video, a flip-up screen, and built-in live streaming capabilities directly to YouTube.",
+      "specifications_json": {
+        "Sensor": "20.1MP 1\" Stacked CMOS",
+        "Lens": "24-120mm Equivalent Zoom",
+        "Video": "4K 30p (No Crop)",
+        "Features": "Live Streaming"
+      }
+    },
+    {
+      "id": "43",
+      "name": "Lumix GH6 Micro Four Thirds",
+      "price": 1899,
+      "rating": 4.6,
+      "reviews_count": 210,
+      "description": "Video-focused MFT with 5.7K 60p recording capabilities.",
+      "image_url": "camera-13.webp",
+      "category_id": 3,
+      "manufacturer": "Panasonic Lumix",
+      "model_number": "DC-GH6",
+      "full_description": "A video-focused Micro Four Thirds camera, the GH6 is a workhorse for filmmakers. It offers internal Apple ProRes recording and uncropped 5.7K 60p video, with high frame rate options for cinematic slow motion.",
+      "specifications_json": {
+        "Sensor": "25.2MP Micro Four Thirds",
+        "Video": "5.7K 60p, Apple ProRes Internal",
+        "Dynamic Range": "13+ Stops",
+        "Lens Mount": "Micro Four Thirds"
+      }
+    },
+    {
+      "id": "44",
+      "name": "Kodak Pixpro FZ45 Point & Shoot",
+      "price": 89,
+      "rating": 4.1,
+      "reviews_count": 550,
+      "description": "Simple, affordable point-and-shoot for everyday moments.",
+      "image_url": "camera-14.webp",
+      "category_id": 3,
+      "manufacturer": "Kodak",
+      "model_number": "PIXPRO-FZ45",
+      "full_description": "The Pixpro FZ45 is a simple, affordable point-and-shoot camera for capturing quick everyday memories. It’s perfect for casual users who want an easy-to-use digital camera.",
+      "specifications_json": {
+        "Sensor": "16MP CCD",
+        "Zoom": "4x Optical Zoom",
+        "Video": "720p HD",
+        "Power": "AA Batteries"
+      }
+    },
+    {
+      "id": "45",
+      "name": "Drone-Mounted 8K Sensor Module",
+      "price": 1299,
+      "rating": 4.7,
+      "reviews_count": 150,
+      "description": "High-end modular sensor for custom drone builds.",
+      "image_url": "camera-15.webp",
+      "category_id": 3,
+      "manufacturer": "Blackmagic",
+      "model_number": "BDC-8K-M",
+      "full_description": "This high-end 8K sensor module is designed for custom mounting on professional cinema drones. It captures stunning aerial footage with incredible detail and a wide dynamic range.",
+      "specifications_json": {
+        "Resolution": "8K Sensor",
+        "Type": "Modular Cinema Sensor",
+        "Video Codec": "Blackmagic RAW",
+        "Form Factor": "Drone-Mounted"
+      }
+    },
+    {
+      "id": "46",
+      "name": "Sony WH-1000XM6 ANC Headphones",
+      "price": 399.99,
+      "rating": 4.9,
+      "reviews_count": 2500,
+      "description": "Industry-leading noise cancellation and spatial audio support.",
+      "image_url": "headphone-1.webp",
+      "category_id": 4,
+      "manufacturer": "Sony",
+      "model_number": "WH-1000XM6",
+      "full_description": "The next evolution of noise-canceling headphones. The WH-1000XM6 features improved dual noise-canceling processors, superior audio quality with LDAC support, and plush comfort for all-day listening.",
+      "specifications_json": {
+        "Type": "Over-Ear Wireless",
+        "ANC": "Industry-leading Adaptive NC",
+        "Battery": "Up to 40 hours (ANC off)",
+        "Codec Support": "LDAC, AAC, SBC"
+      }
+    },
+    {
+      "id": "47",
+      "name": "Apple AirPods Pro (3rd Gen)",
+      "price": 249,
+      "rating": 4.8,
+      "reviews_count": 3100,
+      "description": "Seamless Apple ecosystem integration with adaptive transparency.",
+      "image_url": "headphone-2.webp",
+      "category_id": 4,
+      "manufacturer": "Apple",
+      "model_number": "AirPod-P3",
+      "full_description": "The third generation of AirPods Pro delivers incredible sound quality with personalized spatial audio. They feature MagSafe and USB-C charging, plus double the noise cancellation performance of the previous generation.",
+      "specifications_json": {
+        "Type": "True Wireless Earbuds",
+        "ANC": "Active Noise Cancellation",
+        "Chip": "H3 Chip",
+        "Connectivity": "Bluetooth 5.3"
+      }
+    },
+    {
+      "id": "48",
+      "name": "Bose QuietComfort Ultra Wireless",
+      "price": 429,
+      "rating": 4.7,
+      "reviews_count": 1800,
+      "description": "Immersive audio experience with excellent comfort.",
+      "image_url": "headphone-3.webp",
+      "category_id": 4,
+      "manufacturer": "Bose",
+      "model_number": "QCU-HW",
+      "full_description": "Bose QuietComfort Ultra Wireless headphones offer an immersive audio experience with world-class noise cancellation. They are designed for superior comfort and feature a unique custom sound setting.",
+      "specifications_json": {
+        "Type": "Over-Ear Wireless",
+        "ANC": "QuietComfort Acoustic Noise Cancelling",
+        "Feature": "Immersive Audio Mode",
+        "Battery": "Up to 24 hours"
+      }
+    },
+    {
+      "id": "49",
+      "name": "Sennheiser Momentum 5 Over-Ear",
+      "price": 379,
+      "rating": 4.6,
+      "reviews_count": 950,
+      "description": "Premium sound quality with advanced acoustic tuning.",
+      "image_url": "headphone-4.webp",
+      "category_id": 4,
+      "manufacturer": "Sennheiser",
+      "model_number": "MOMENTUM5",
+      "full_description": "These headphones are built for the audiophile, providing premium, detailed sound quality. The Momentum 5 features advanced acoustic tuning and comfortable, durable materials for long-term listening pleasure.",
+      "specifications_json": {
+        "Type": "Over-Ear Wireless",
+        "Sound Profile": "Audiophile Grade",
+        "Connectivity": "Bluetooth 5.2",
+        "Design": "Folding Headband"
+      }
+    },
+    {
+      "id": "50",
+      "name": "JBL Live 3 Series TWS Earbuds",
+      "price": 199,
+      "rating": 4.5,
+      "reviews_count": 1200,
+      "description": "True wireless earbuds with a smart charging case display.",
+      "image_url": "headphone-5.webp",
+      "category_id": 4,
+      "manufacturer": "JBL",
+      "model_number": "LIVE3",
+      "full_description": "The JBL Live 3 Series TWS Earbuds stand out with their smart charging case that features a display for controlling settings and music without touching your phone. They offer great sound and deep bass.",
+      "specifications_json": {
+        "Type": "True Wireless Earbuds",
+        "Feature": "Smart Charging Case Display",
+        "ANC": "Adaptive Noise Cancelling",
+        "Water Resistance": "IP55"
+      }
+    },
+    {
+      "id": "51",
+      "name": "Beats Studio Pro Over-Ear",
+      "price": 349,
+      "rating": 4.4,
+      "reviews_count": 750,
+      "description": "Punchy sound profile and long battery life.",
+      "image_url": "headphone-6.webp",
+      "category_id": 4,
+      "manufacturer": "Beats",
+      "model_number": "B0518",
+      "full_description": "The Beats Studio Pro offers a powerful, punchy sound profile and fully adaptive Active Noise Cancellation. With both Apple and Android compatibility, they deliver high-quality audio across platforms.",
+      "specifications_json": {
+        "Type": "Over-Ear Wireless",
+        "ANC": "Fully Adaptive",
+        "Chip": "Apple H1/Custom Android Chip",
+        "Battery": "Up to 40 hours"
+      }
+    },
+    {
+      "id": "52",
+      "name": "Google Pixel Buds Pro 2",
+      "price": 219,
+      "rating": 4.6,
+      "reviews_count": 880,
+      "description": "Deep integration with Android, great mic for calls.",
+      "image_url": "headphone-7.webp",
+      "category_id": 4,
+      "manufacturer": "Google",
+      "model_number": "GPB-P2",
+      "full_description": "The Pixel Buds Pro 2 provide deep integration with the Android ecosystem, excellent sound, and crystal-clear call quality. They feature Silent Seal for superior noise blocking.",
+      "specifications_json": {
+        "Type": "True Wireless Earbuds",
+        "ANC": "Silent Seal ANC",
+        "Feature": "Deep Android Integration",
+        "Water Resistance": "IPX4"
+      }
+    },
+    {
+      "id": "53",
+      "name": "Bose Ultra Open Earbuds",
+      "price": 299,
+      "rating": 4.5,
+      "reviews_count": 620,
+      "description": "Unique open-ear design for situational awareness.",
+      "image_url": "headphone-8.webp",
+      "category_id": 4,
+      "manufacturer": "Bose",
+      "model_number": "QCOU-BK",
+      "full_description": "The Bose Ultra Open Earbuds feature a unique open-ear design that clips to your ear, allowing you to hear music clearly while remaining aware of your surroundings. Great for workouts and office use.",
+      "specifications_json": {
+        "Type": "Open-Ear True Wireless",
+        "Design": "Clip-on (Open-Ear)",
+        "Audio": "Spatial Audio",
+        "Battery": "Up to 7.5 hours (earbuds)"
+      }
+    },
+    {
+      "id": "54",
+      "name": "Anker Soundcore Liberty 4 NC",
+      "price": 99.99,
+      "rating": 4.7,
+      "reviews_count": 1500,
+      "description": "Budget ANC earbuds with impressive performance.",
+      "image_url": "headphone-9.webp",
+      "category_id": 4,
+      "manufacturer": "Anker",
+      "model_number": "A3930",
+      "full_description": "The Soundcore Liberty 4 NC proves that you don't need to break the bank for great noise cancellation. These earbuds offer a solid ANC performance and custom sound profiles at a budget-friendly price.",
+      "specifications_json": {
+        "Type": "True Wireless Earbuds",
+        "ANC": "Adaptive ANC 2.0",
+        "Battery": "Up to 10 hours (earbuds)",
+        "Charging": "Wireless Charging Case"
+      }
+    },
+    {
+      "id": "55",
+      "name": "Marshall Major IV On-Ear",
+      "price": 149,
+      "rating": 4.3,
+      "reviews_count": 550,
+      "description": "Classic rock and roll design with 80+ hours of playback.",
+      "image_url": "headphone-10.webp",
+      "category_id": 4,
+      "manufacturer": "Marshall",
+      "model_number": "MAJORIV-BLK",
+      "full_description": "The Marshall Major IV features the iconic rock and roll aesthetic and an astonishing 80+ hours of playback time. They offer a deep, rich sound profile and are comfortable for long listening sessions.",
+      "specifications_json": {
+        "Type": "On-Ear Wireless",
+        "Battery": "80+ Hours",
+        "Charging": "Wireless Charging",
+        "Design": "Classic Marshall Aesthetics"
+      }
+    },
+    {
+      "id": "56",
+      "name": "Skullcandy Crusher ANC 2",
+      "price": 199,
+      "rating": 4.2,
+      "reviews_count": 410,
+      "description": "Intense sensory bass experience you can feel.",
+      "image_url": "headphone-11.webp",
+      "category_id": 4,
+      "manufacturer": "Skullcandy",
+      "model_number": "S6MBW-N744",
+      "full_description": "Experience music like never before with the Skullcandy Crusher ANC 2. The adjustable Sensory Bass allows you to literally feel the vibrations of the music, making for an intense and unique listening experience.",
+      "specifications_json": {
+        "Type": "Over-Ear Wireless",
+        "Feature": "Adjustable Sensory Bass",
+        "ANC": "Digital Active Noise Canceling",
+        "Controls": "Customizable Buttons"
+      }
+    },
+    {
+      "id": "57",
+      "name": "Audio-Technica M50x Wired",
+      "price": 169,
+      "rating": 4.8,
+      "reviews_count": 2000,
+      "description": "Studio monitor headphones, legendary sound quality.",
+      "image_url": "headphone-12.webp",
+      "category_id": 4,
+      "manufacturer": "Audio-Technica",
+      "model_number": "ATH-M50X",
+      "full_description": "A legendary studio monitor headphone, the M50x is trusted by engineers and audiophiles worldwide for its exceptional clarity, deep, accurate bass, and comfortable closed-back design. Still the best-wired option.",
+      "specifications_json": {
+        "Type": "Wired Over-Ear",
+        "Drivers": "45mm Large-aperture",
+        "Impedance": "38 Ohms",
+        "Use": "Studio Monitoring"
+      }
+    },
+    {
+      "id": "58",
+      "name": "Jabra Elite 10 True Wireless",
+      "price": 249,
+      "rating": 4.5,
+      "reviews_count": 690,
+      "description": "Focus on comfort, fit, and crystal-clear calls.",
+      "image_url": "headphone-13.webp",
+      "category_id": 4,
+      "manufacturer": "Jabra",
+      "model_number": "Elite10",
+      "full_description": "The Jabra Elite 10 are optimized for all-day comfort with their semi-open design and excellent call clarity, using 6 microphones to filter out background noise. They are perfect for hybrid work life.",
+      "specifications_json": {
+        "Type": "True Wireless Earbuds",
+        "Fit": "Semi-open, All-day Comfort",
+        "Microphones": "6-Mic Call Technology",
+        "ANC": "Jabra Advanced ANC"
+      }
+    },
+    {
+      "id": "59",
+      "name": "Shure AONIC 5 Wired Earphones",
+      "price": 499,
+      "rating": 4.7,
+      "reviews_count": 300,
+      "description": "Triple High-Definition Drivers for audiophiles.",
+      "image_url": "headphone-14.webp",
+      "category_id": 4,
+      "manufacturer": "Shure",
+      "model_number": "AONIC5",
+      "full_description": "Designed for the discerning audiophile, the AONIC 5 features triple high-definition drivers for spacious, incredible sound. These wired earphones provide exceptional sound isolation and crystal-clear highs.",
+      "specifications_json": {
+        "Type": "Wired Earphones (IEM)",
+        "Drivers": "Triple High-Definition Balanced Armature",
+        "Isolation": "Sound Isolating Design",
+        "Cable": "Detachable MMCX"
+      }
+    },
+    {
+      "id": "60",
+      "name": "Logitech G Pro X 2 Gaming Headset",
+      "price": 249,
+      "rating": 4.6,
+      "reviews_count": 810,
+      "description": "Crystal-clear Blue VO!CE microphone technology.",
+      "image_url": "headphone-15.webp",
+      "category_id": 4,
+      "manufacturer": "Logitech",
+      "model_number": "981-001069",
+      "full_description": "The Logitech G Pro X 2 LIGHTSPEED Gaming Headset is designed with and for esports professionals. It features the incredible Blue VO!CE microphone technology for clear comms and durable construction.",
+      "specifications_json": {
+        "Type": "Wireless Gaming Headset",
+        "Mic": "Blue VO!CE Technology",
+        "Drivers": "50mm PRO-G GRAPHENE",
+        "Connectivity": "LIGHTSPEED Wireless"
+      }
+    },
+    {
+      "id": "61",
+      "name": "Apple MacBook Air 13\" (M3 Chip)",
+      "price": 1099,
+      "rating": 4.8,
+      "reviews_count": 1900,
+      "description": "The ultimate portable laptop with all-day battery life.",
+      "image_url": "computer-1.webp",
+      "category_id": 5,
+      "manufacturer": "Apple",
+      "model_number": "A3111",
+      "full_description": "The ultimate portable laptop with the M3 chip, delivering a perfect blend of power and efficiency. The fanless design keeps it silent, and the Liquid Retina display is stunningly bright and colorful.",
+      "specifications_json": {
+        "CPU": "Apple M3 Chip (8-Core)",
+        "RAM": "8GB Unified",
+        "Storage": "256GB SSD",
+        "Display": "13.6-inch Liquid Retina"
+      }
+    },
+    {
+      "id": "62",
+      "name": "Dell XPS 15 (i9, 64GB RAM)",
+      "price": 2999,
+      "rating": 4.7,
+      "reviews_count": 550,
+      "description": "Premium Windows laptop with InfinityEdge display and high performance.",
+      "image_url": "computer-2.webp",
+      "category_id": 5,
+      "manufacturer": "Dell",
+      "model_number": "XPS9530",
+      "full_description": "A powerhouse Windows laptop, the Dell XPS 15 is known for its stunning InfinityEdge OLED display and professional-grade performance. It's the ideal machine for video editing and demanding creative work.",
+      "specifications_json": {
+        "CPU": "Intel Core i9-14900H",
+        "RAM": "64GB DDR5",
+        "GPU": "NVIDIA GeForce RTX 4070",
+        "Display": "15.6\" OLED 3.5K Touch"
+      }
+    },
+    {
+      "id": "63",
+      "name": "Microsoft Surface Laptop 7th Edition",
+      "price": 1499,
+      "rating": 4.6,
+      "reviews_count": 750,
+      "description": "Sleek design with AI-powered performance from the Snapdragon X Elite.",
+      "image_url": "computer-3.webp",
+      "category_id": 5,
+      "manufacturer": "Microsoft",
+      "model_number": "SL7-13",
+      "full_description": "The Surface Laptop 7 is a game-changer, featuring the new Snapdragon X Elite processor for blazing-fast performance and incredible battery life, specifically designed for AI-enhanced Windows 11 experiences.",
+      "specifications_json": {
+        "CPU": "Snapdragon X Elite",
+        "RAM": "16GB",
+        "Storage": "512GB SSD",
+        "Display": "13.8-inch PixelSense Touchscreen"
+      }
+    },
+    {
+      "id": "64",
+      "name": "Asus ZenBook 14 OLED Touch",
+      "price": 1199,
+      "rating": 4.7,
+      "reviews_count": 420,
+      "description": "Top consumer ultraportable with a vibrant OLED screen.",
+      "image_url": "computer-4.webp",
+      "category_id": 5,
+      "manufacturer": "Asus",
+      "model_number": "UX3405",
+      "full_description": "The ZenBook 14 is a premium ultraportable laptop with a stunning 2.8K OLED touch display. It balances portability, style, and performance, making it an excellent choice for general use and media consumption.",
+      "specifications_json": {
+        "CPU": "Intel Core Ultra 7",
+        "RAM": "16GB LPDDR5X",
+        "Display": "14\" 2.8K OLED Touch",
+        "Weight": "2.6 lbs"
+      }
+    },
+    {
+      "id": "65",
+      "name": "Lenovo ThinkPad X1 Carbon Gen 12",
+      "price": 1799,
+      "rating": 4.8,
+      "reviews_count": 610,
+      "description": "Best-in-class business ultraportable with iconic keyboard.",
+      "image_url": "computer-5.webp",
+      "category_id": 5,
+      "manufacturer": "Lenovo",
+      "model_number": "21KC0009US",
+      "full_description": "The ThinkPad X1 Carbon is the gold standard for business ultraportables. It features a lightweight carbon-fiber design, the famous TrackPoint, and a robust set of ports for all-day productivity.",
+      "specifications_json": {
+        "CPU": "Intel Core Ultra 7 vPro",
+        "RAM": "32GB LPDDR5",
+        "Display": "14\" OLED 2.8K",
+        "Feature": "Iconic TrackPoint"
+      }
+    },
+    {
+      "id": "66",
+      "name": "Acer Chromebook Spin Plus 714",
+      "price": 699,
+      "rating": 4.5,
+      "reviews_count": 800,
+      "description": "High-end 2-in-1 Chromebook with all-metal chassis.",
+      "image_url": "computer-6.webp",
+      "category_id": 5,
+      "manufacturer": "Acer",
+      "model_number": "CP714-2W",
+      "full_description": "This is a high-end 2-in-1 Chromebook built on a sleek all-metal chassis. The Spin Plus 714 offers rapid performance and a sharp touch screen, seamlessly transitioning between laptop and tablet modes.",
+      "specifications_json": {
+        "CPU": "Intel Core Ultra 5",
+        "RAM": "8GB LPDDR4X",
+        "Storage": "256GB SSD",
+        "OS": "ChromeOS"
+      }
+    },
+    {
+      "id": "67",
+      "name": "HP Spectre x360 14 Convertible",
+      "price": 1599,
+      "rating": 4.6,
+      "reviews_count": 390,
+      "description": "Premium convertible laptop ideal for remote professionals.",
+      "image_url": "computer-7.webp",
+      "category_id": 5,
+      "manufacturer": "HP",
+      "model_number": "14-eu0023dx",
+      "full_description": "The HP Spectre x360 14 is a premium convertible laptop with a dazzling OLED display. It's ideal for remote professionals, offering a versatile 360-degree hinge and a focus on video conferencing quality.",
+      "specifications_json": {
+        "CPU": "Intel Core Ultra 7",
+        "RAM": "16GB",
+        "Display": "14\" 2.8K OLED",
+        "Form Factor": "2-in-1 Convertible"
+      }
+    },
+    {
+      "id": "68",
+      "name": "iMac 24-inch (M3, 8-Core GPU)",
+      "price": 1299,
+      "rating": 4.7,
+      "reviews_count": 950,
+      "description": "All-in-one desktop computer with a brilliant 4.5K display.",
+      "image_url": "computer-8.webp",
+      "category_id": 5,
+      "manufacturer": "Apple",
+      "model_number": "MQRJ3LL/A",
+      "full_description": "The iMac 24-inch is an all-in-one desktop computer with a stunning 4.5K Retina display and the powerful M3 chip. It’s perfect for home office and creative users who value design and simplicity.",
+      "specifications_json": {
+        "CPU": "Apple M3 Chip (8-Core)",
+        "RAM": "8GB Unified",
+        "Display": "24\" 4.5K Retina",
+        "Design": "All-in-One Desktop"
+      }
+    },
+    {
+      "id": "69",
+      "name": "Dell Precision 5690 Workstation",
+      "price": 3599,
+      "rating": 4.9,
+      "reviews_count": 250,
+      "description": "High-performance mobile workstation for content creation.",
+      "image_url": "computer-9.webp",
+      "category_id": 5,
+      "manufacturer": "Dell",
+      "model_number": "5690-WS",
+      "full_description": "The Dell Precision 5690 is a high-performance mobile workstation, built for raw professional-grade power. It is designed for engineers, architects, and media creators who run demanding software.",
+      "specifications_json": {
+        "CPU": "Intel Core Ultra 9",
+        "RAM": "64GB ECC",
+        "GPU": "NVIDIA RTX 5000 Ada",
+        "Display": "16\" OLED 4K"
+      }
+    },
+    {
+      "id": "70",
+      "name": "Samsung Galaxy Tab S10+ Tablet",
+      "price": 999,
+      "rating": 4.5,
+      "reviews_count": 500,
+      "description": "Premium Android tablet with large screen and S Pen support.",
+      "image_url": "computer-10.webp",
+      "category_id": 5,
+      "manufacturer": "Samsung",
+      "model_number": "SM-X916B",
+      "full_description": "The Galaxy Tab S10+ is Samsung's flagship Android tablet, designed to compete with the iPad Pro. It features a massive screen and comes with the S Pen, making it excellent for drawing and note-taking.",
+      "specifications_json": {
+        "Display": "12.4\" Dynamic AMOLED 2X",
+        "Chip": "Snapdragon 8 Gen 4 for Galaxy",
+        "Pen": "Included S Pen",
+        "OS": "Android with DeX Mode"
+      }
+    },
+    {
+      "id": "71",
+      "name": "Apple iPad Pro 13-inch (M4 Chip)",
+      "price": 1299,
+      "rating": 4.9,
+      "reviews_count": 1100,
+      "description": "Thinnest and most powerful iPad yet with Ultra Retina XDR display.",
+      "image_url": "computer-11.webp",
+      "category_id": 5,
+      "manufacturer": "Apple",
+      "model_number": "MU0J3LL/A",
+      "full_description": "The new iPad Pro is the thinnest device Apple has ever made, featuring the groundbreaking M4 chip. Its tandem OLED Ultra Retina XDR display provides astonishing brightness and precision for creative professionals.",
+      "specifications_json": {
+        "Display": "13\" Tandem OLED Ultra Retina XDR",
+        "Chip": "Apple M4 Chip",
+        "Thickness": "5.1mm",
+        "Feature": "LiDAR Scanner"
+      }
+    },
+    {
+      "id": "72",
+      "name": "Amazon Fire Max 11 Tablet",
+      "price": 229.99,
+      "rating": 4.2,
+      "reviews_count": 1500,
+      "description": "Affordable 11-inch tablet for media consumption and light tasks.",
+      "image_url": "computer-12.webp",
+      "category_id": 5,
+      "manufacturer": "Amazon",
+      "model_number": "K3Q4RT",
+      "full_description": "The Amazon Fire Max 11 is the company's most powerful and largest tablet. It's an affordable option for consuming media, reading, and light gaming, tightly integrated with Amazon's ecosystem.",
+      "specifications_json": {
+        "Display": "11\" HD",
+        "RAM": "4GB",
+        "Storage": "64GB (Expandable)",
+        "OS": "Fire OS"
+      }
+    },
+    {
+      "id": "73",
+      "name": "HP Envy Desktop TE02-2000t",
+      "price": 799,
+      "rating": 4.4,
+      "reviews_count": 350,
+      "description": "Reliable mid-range desktop tower for home and office use.",
+      "image_url": "computer-13.webp",
+      "category_id": 5,
+      "manufacturer": "HP",
+      "model_number": "TE02-2000T",
+      "full_description": "A reliable mid-range desktop tower for general home and office use. The HP Envy Desktop provides a clean design and sufficient power for everyday tasks and moderate multitasking.",
+      "specifications_json": {
+        "CPU": "Intel Core i5-14400",
+        "RAM": "16GB DDR4",
+        "Storage": "512GB SSD + 1TB HDD",
+        "GPU": "NVIDIA GeForce RTX 3050"
+      }
+    },
+    {
+      "id": "74",
+      "name": "Mac Mini (M2 Chip, 8GB/256GB)",
+      "price": 599,
+      "rating": 4.6,
+      "reviews_count": 700,
+      "description": "Compact, powerful desktop for minimalists.",
+      "image_url": "computer-14.webp",
+      "category_id": 5,
+      "manufacturer": "Apple",
+      "model_number": "MNHF3LL/A",
+      "full_description": "The Mac Mini is a compact, powerful, and affordable desktop solution. It provides the incredible performance of the M2 chip in a tiny form factor, perfect for minimalist setups.",
+      "specifications_json": {
+        "CPU": "Apple M2 Chip (8-Core)",
+        "RAM": "8GB Unified",
+        "Storage": "256GB SSD",
+        "Connectivity": "Thunderbolt 4"
+      }
+    },
+    {
+      "id": "75",
+      "name": "Raspberry Pi 5 Developer Kit",
+      "price": 80,
+      "rating": 4.7,
+      "reviews_count": 2500,
+      "description": "Ultimate single-board computer for hobbyists and IoT projects.",
+      "image_url": "computer-15.webp",
+      "category_id": 5,
+      "manufacturer": "Raspberry Pi Foundation",
+      "model_number": "RPi5-DVK",
+      "full_description": "The Raspberry Pi 5 Developer Kit is the ultimate single-board computer for hobbyists, educators, and IoT developers, offering dramatically increased CPU and GPU performance over its predecessor.",
+      "specifications_json": {
+        "CPU": "Broadcom BCM2712 Quad-Core",
+        "RAM": "8GB LPDDR4X",
+        "Connectivity": "Gigabit Ethernet, Wi-Fi 5",
+        "Feature": "PCIe Support"
+      }
+    },
+    {
+      "id": "76",
+      "name": "Sony PlayStation 5 Pro Console",
+      "price": 799,
+      "rating": 4.9,
+      "reviews_count": 4500,
+      "description": "Next-gen console with enhanced graphics and ray tracing.",
+      "image_url": "gaming-1.webp",
+      "category_id": 6,
+      "manufacturer": "Sony",
+      "model_number": "CFI-2000A",
+      "full_description": "The PlayStation 5 Pro delivers the definitive console gaming experience with a dedicated machine learning accelerator, enhanced ray tracing, and a massive 2TB SSD for lightning-fast loading.",
+      "specifications_json": {
+        "CPU": "8x Zen 2 @ 3.5GHz (Variable)",
+        "GPU": "33.5 TFLOPS RDNA 3",
+        "Storage": "2TB NVMe SSD",
+        "Max Output": "8K Upscaled"
+      }
+    },
+    {
+      "id": "77",
+      "name": "Microsoft Xbox Series X Console",
+      "price": 499,
+      "rating": 4.8,
+      "reviews_count": 3900,
+      "description": "Powerful console with fast loading and 120 FPS support.",
+      "image_url": "gaming-2.webp",
+      "category_id": 6,
+      "manufacturer": "Microsoft",
+      "model_number": "RRT-00001",
+      "full_description": "The Xbox Series X is Microsoft's most powerful console, designed for speed and performance. It offers 4K at 120 FPS, quick resume for multiple games, and is the home of Xbox Game Pass.",
+      "specifications_json": {
+        "CPU": "8x Zen 2 @ 3.8GHz (Variable)",
+        "GPU": "12 TFLOPS RDNA 2",
+        "Storage": "1TB NVMe SSD",
+        "Max Output": "4K 120 FPS"
+      }
+    },
+    {
+      "id": "78",
+      "name": "Nintendo Switch 2 (Rumored)",
+      "price": 399,
+      "rating": 4.7,
+      "reviews_count": 3100,
+      "description": "Next-generation hybrid console for gaming on the go or at home.",
+      "image_url": "gaming-3.webp",
+      "category_id": 6,
+      "manufacturer": "Nintendo",
+      "model_number": "N-SWITCH2",
+      "full_description": "The anticipated next-generation hybrid console from Nintendo, combining the flexibility of a handheld with the power of a home console, expected to feature enhanced graphics and backward compatibility.",
+      "specifications_json": {
+        "Type": "Hybrid Console (Home/Handheld)",
+        "Display": "OLED (Expected)",
+        "Max Output": "4K Docked (Expected)",
+        "Feature": "Detachable Joy-Con Controllers"
+      }
+    },
+    {
+      "id": "79",
+      "name": "Valve Steam Deck OLED Handheld",
+      "price": 549,
+      "rating": 4.7,
+      "reviews_count": 1500,
+      "description": "PC gaming in your hands with a vibrant OLED display.",
+      "image_url": "gaming-4.webp",
+      "category_id": 6,
+      "manufacturer": "Valve",
+      "model_number": "1010",
+      "full_description": "The Steam Deck OLED is a handheld PC gaming device. It features a stunning OLED screen, longer battery life, and allows you to play your entire Steam library on the go.",
+      "specifications_json": {
+        "CPU": "AMD APU",
+        "Display": "7.4\" OLED 90Hz",
+        "Storage": "1TB NVMe SSD",
+        "OS": "SteamOS"
+      }
+    },
+    {
+      "id": "80",
+      "name": "Meta Quest 3 VR Headset 512GB",
+      "price": 649,
+      "rating": 4.6,
+      "reviews_count": 1100,
+      "description": "Advanced mixed-reality headset for immersive experiences.",
+      "image_url": "gaming-5.webp",
+      "category_id": 6,
+      "manufacturer": "Meta",
+      "model_number": "899-00517-02",
+      "full_description": "The Meta Quest 3 is an advanced mixed-reality headset, offering a blend of virtual and physical worlds. It has a higher resolution display and is lighter and more comfortable than previous generations.",
+      "specifications_json": {
+        "Type": "Mixed Reality Headset",
+        "Storage": "512GB",
+        "Resolution": "2064x2208 per eye",
+        "Processor": "Snapdragon XR2 Gen 2"
+      }
+    },
+    {
+      "id": "81",
+      "name": "NVIDIA GeForce RTX 4070 Ti GPU",
+      "price": 799,
+      "rating": 4.8,
+      "reviews_count": 850,
+      "description": "High-performance graphics card for 4K gaming.",
+      "image_url": "gaming-6.webp",
+      "category_id": 6,
+      "manufacturer": "NVIDIA",
+      "model_number": "900-1G136-2530-000",
+      "full_description": "A high-performance graphics card built on the Ada Lovelace architecture. The RTX 4070 Ti offers excellent ray tracing capabilities and DLSS 3 for high-refresh-rate 4K gaming.",
+      "specifications_json": {
+        "GPU Architecture": "Ada Lovelace",
+        "VRAM": "12GB GDDR6X",
+        "Interface": "PCI Express 4.0",
+        "Recommended Use": "4K Gaming"
+      }
+    },
+    {
+      "id": "82",
+      "name": "Logitech G Pro Wireless Mouse",
+      "price": 129.99,
+      "rating": 4.7,
+      "reviews_count": 1400,
+      "description": "Ultra-lightweight wireless mouse for professional esports.",
+      "image_url": "gaming-7.webp",
+      "category_id": 6,
+      "manufacturer": "Logitech",
+      "model_number": "910-005270",
+      "full_description": "Designed for professional esports athletes, the Logitech G Pro Wireless mouse is incredibly lightweight and features the HERO 25K sensor for pixel-precise tracking and ultra-low latency.",
+      "specifications_json": {
+        "Type": "Wireless Mouse",
+        "Sensor": "HERO 25K",
+        "Weight": "63 grams",
+        "Connectivity": "LIGHTSPEED Wireless"
+      }
+    },
+    {
+      "id": "83",
+      "name": "Corsair K100 RGB Mechanical Keyboard",
+      "price": 229,
+      "rating": 4.5,
+      "reviews_count": 700,
+      "description": "Optical-mechanical switches and iCUE control wheel.",
+      "image_url": "gaming-8.webp",
+      "category_id": 6,
+      "manufacturer": "Corsair",
+      "model_number": "CH-912A014-NA",
+      "full_description": "The Corsair K100 RGB is a premium mechanical gaming keyboard. It features OPX optical-mechanical key switches and a dedicated iCUE control wheel for fast customization and superior speed.",
+      "specifications_json": {
+        "Switches": "CORSAIR OPX Optical-Mechanical",
+        "Layout": "Full Size",
+        "Polling Rate": "8,000Hz",
+        "Feature": "iCUE Control Wheel"
+      }
+    },
+    {
+      "id": "84",
+      "name": "Sony DualSense Edge Controller",
+      "price": 199.99,
+      "rating": 4.6,
+      "reviews_count": 950,
+      "description": "Customizable pro controller for the PS5.",
+      "image_url": "gaming-9.webp",
+      "category_id": 6,
+      "manufacturer": "Sony",
+      "model_number": "CFI-ZCP1",
+      "full_description": "The DualSense Edge is Sony's high-performance, customizable controller for the PS5. It features swappable stick caps, interchangeable back buttons, and adjustable trigger stops for competitive play.",
+      "specifications_json": {
+        "Type": "Pro Controller",
+        "Compatibility": "PS5",
+        "Features": "Interchangeable Back Buttons",
+        "Connectivity": "Wired/Wireless"
+      }
+    },
+    {
+      "id": "85",
+      "name": "SteelSeries Apex Pro TKL Keyboard",
+      "price": 179,
+      "rating": 4.5,
+      "reviews_count": 550,
+      "description": "Adjustable mechanical switches for precise actuation.",
+      "image_url": "gaming-10.webp",
+      "category_id": 6,
+      "manufacturer": "SteelSeries",
+      "model_number": "64834",
+      "full_description": "The Apex Pro TKL features OmniPoint 2.0 adjustable mechanical switches, allowing you to customize the actuation distance for every key—perfect for switching between gaming and typing.",
+      "specifications_json": {
+        "Switches": "OmniPoint 2.0 Adjustable Mechanical",
+        "Layout": "Tenkeyless (TKL)",
+        "Display": "Smart OLED Display",
+        "Material": "Aircraft Grade Aluminum"
+      }
+    },
+    {
+      "id": "86",
+      "name": "Turtle Beach Stealth 700 Gen 2",
+      "price": 149,
+      "rating": 4.4,
+      "reviews_count": 650,
+      "description": "Premium wireless gaming headset for Xbox/PlayStation.",
+      "image_url": "gaming-11.webp",
+      "category_id": 6,
+      "manufacturer": "Turtle Beach",
+      "model_number": "TBS-3780-01",
+      "full_description": "The Stealth 700 Gen 2 offers a premium wireless audio experience for consoles. It features a comfortable fit, strong battery life, and powerful 50mm Nanoclear™ speakers for immersive sound.",
+      "specifications_json": {
+        "Type": "Wireless Gaming Headset",
+        "Compatibility": "Xbox/PlayStation/PC",
+        "Drivers": "50mm Nanoclear™",
+        "Feature": "Aerofit™ Cooling-Gel Cushions"
+      }
+    },
+    {
+      "id": "87",
+      "name": "Elgato Stream Deck XL",
+      "price": 249,
+      "rating": 4.8,
+      "reviews_count": 410,
+      "description": "Advanced control surface for streamers and content creators.",
+      "image_url": "gaming-12.webp",
+      "category_id": 6,
+      "manufacturer": "Elgato",
+      "model_number": "10GAE9901",
+      "full_description": "The Stream Deck XL is an advanced control surface for content creators, providing 32 customizable LCD keys to trigger actions, launch media, and switch scenes instantly. Essential for serious streamers.",
+      "specifications_json": {
+        "Controls": "32 Customizable LCD Keys",
+        "Use": "Streaming, Productivity",
+        "Integration": "Twitch, YouTube, OBS, etc.",
+        "Interface": "USB 3.0"
+      }
+    },
+    {
+      "id": "88",
+      "name": "Samsung Odyssey G9 Neo Monitor",
+      "price": 1499,
+      "rating": 4.7,
+      "reviews_count": 300,
+      "description": "49-inch curved ultrawide gaming monitor with Mini LED.",
+      "image_url": "gaming-13.webp",
+      "category_id": 6,
+      "manufacturer": "Samsung",
+      "model_number": "LS49CG954ENXAP",
+      "full_description": "The Odyssey G9 Neo is an enormous 49-inch curved ultrawide monitor with Mini LED technology. It delivers an incredibly immersive, high-contrast, and fast-response gaming experience.",
+      "specifications_json": {
+        "Size": "49\" Ultrawide (1000R Curve)",
+        "Resolution": "5120x1440 (DQHD)",
+        "Refresh Rate": "240Hz",
+        "Technology": "Mini LED (Quantum Matrix)"
+      }
+    },
+    {
+      "id": "89",
+      "name": "Razer Kishi V2 Mobile Controller",
+      "price": 99.99,
+      "rating": 4.5,
+      "reviews_count": 820,
+      "description": "Universal mobile gaming controller for Android and iPhone.",
+      "image_url": "gaming-14.webp",
+      "category_id": 6,
+      "manufacturer": "Razer",
+      "model_number": "RZ06-03360100-R3U1",
+      "full_description": "The Razer Kishi V2 is a universal mobile gaming controller that turns your Android or iPhone into a portable gaming console. It features microswitch buttons for precise, tactile control.",
+      "specifications_json": {
+        "Type": "Mobile Gaming Controller",
+        "Compatibility": "Universal (Android/iPhone)",
+        "Connection": "USB-C/Lightning (Direct)",
+        "Buttons": "Microswitch"
+      }
+    },
+    {
+      "id": "90",
+      "name": "HyperX QuadCast S Microphone",
+      "price": 159.99,
+      "rating": 4.6,
+      "reviews_count": 750,
+      "description": "Professional USB microphone for streaming and podcasting.",
+      "image_url": "gaming-15.webp",
+      "category_id": 6,
+      "manufacturer": "HyperX",
+      "model_number": "HMQC1S-XX-RG/G",
+      "full_description": "The QuadCast S is a professional-grade USB condenser microphone perfect for streaming, podcasting, and voiceovers. It features four selectable polar patterns and dynamic RGB lighting effects.",
+      "specifications_json": {
+        "Type": "USB Condenser Microphone",
+        "Polar Patterns": "Stereo, Omnidirectional, Cardioid, Bidirectional",
+        "Feature": "Tap-to-Mute Sensor",
+        "Lighting": "Dynamic RGB"
+      }
+    }
+  ]
+}

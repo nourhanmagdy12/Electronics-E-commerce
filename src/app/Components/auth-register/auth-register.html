@@ -1,0 +1,92 @@
+<div class="auth-wrapper d-flex align-items-center justify-content-center">
+  <div class="auth-card shadow-lg p-5 rounded-4 bg-light text-dark">
+    <h2 class="text-center mb-4 fw-bold text-dark">Create Account</h2>
+    <p class="text-center mb-4 text-secondary">
+      Join us today and explore the latest tech products with personalized offers.
+    </p>
+
+    <form (ngSubmit)="register()" class="needs-validation" novalidate>
+      
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          id="username"
+          placeholder="Full Name"
+          class="form-control bg-transparent text-dark border-muted"
+          required
+        />
+        <label for="username" class="text-muted">Full Name</label>
+      </div>
+
+   
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          class="form-control bg-transparent text-dark border-muted"
+          required
+        />
+        <label for="email" class="text-muted">Email Address</label>
+      </div>
+
+ 
+      <div class="form-floating mb-4">
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          class="form-control bg-transparent text-darkborder-muted"
+          required
+        />
+        <label for="password" class="text-muted">Password</label>
+      </div>
+
+    
+      <div class="form-floating mb-4">
+        <input
+          type="password"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+          class="form-control bg-transparent text-light border-muted"
+          required
+        />
+        <label for="confirmPassword" class="text-muted">Confirm Password</label>
+      </div>
+
+      
+      <div class="form-check mb-4">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="terms"
+          required
+        />
+        <label class="form-check-label text-secondary" for="terms">
+          I agree to the <a href="#" class=" text-decoration-none">Terms & Conditions</a>
+        </label>
+      </div>
+
+   
+      <button type="submit" class="btn btn-dark w-100 py-2 rounded-3 fw-semibold">
+        Register
+      </button>
+
+      <div class="text-center mt-4">
+        <p class="text-secondary mb-0">
+          Already have an account?
+          <a routerLink="/login" class=" fw-semibold text-decoration-none">Login here</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+

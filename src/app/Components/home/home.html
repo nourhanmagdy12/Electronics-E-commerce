@@ -1,0 +1,141 @@
+<div class="container-fluid home-page p-0">
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero d-flex flex-column flex-md-row align-items-center justify-content-between text-white px-3 px-md-5" style=" height: 100vh;">
+    <div class="hero-content col-md-6">
+      <h5 class="fw-bold text-uppercase text-secondary">Pro.Beyond.</h5>
+      <h1 class="display-3 fw-bold mb-3">iPhone 14 <span class="text-primary">Pro</span></h1>
+      <p class="lead mb-4">Created to change everything for the better. For everyone.</p>
+      <a routerLink="/products" class="btn btn-shop btn-outline-light mt-3">Shop Now</a>
+    </div>
+    <div class="hero-img" style="width: 450px;
+height: 100vh;
+flex-shrink: 0;">
+       
+    </div>
+  </section>
+
+  <!-- ====== FEATURED BOXES ====== -->
+<section class="featured  container-fluid px-0" >
+  <div class="row g-0 align-items-stretch">
+
+    
+    <div class="col-lg-6 d-flex flex-column">
+ 
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between bg-white p-5 h-100 border-0">
+        <img src="/1.jpg" class="img-fluid ps5-img w-50" alt="PlayStation 5">
+        <div class="text-start p-4">
+          <h2 class="fw-bold">PlayStation 5</h2>
+          <p class="text-muted mb-0">
+            Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.
+          </p>
+        </div>
+      </div>
+ 
+      <div class="row g-0 flex-grow-1">
+        <div class="col-md-6 bg-white text-dark p-5 d-flex flex-column justify-content-center align-items-start border-0">
+          <img src="/6.jpg" class="img-fluid mb-3" alt="AirPods Max">
+          <h4>Apple AirPods <span class="fw-bold">Max</span></h4>
+          <p class="text-muted small mb-0">Computational audio. Listen, it's powerful.</p>
+        </div>
+        <div class="col-md-6 bg-dark text-white p-5 d-flex flex-column justify-content-center align-items-start border-0">
+          <img src="/4.jpg" class="img-fluid mb-3" alt="Vision Pro">
+          <h4>Apple Vision <span class="fw-bold">Pro</span></h4>
+          <p class="text-light small mb-0">An immersive way to experience entertainment.</p>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="col-lg-6 bg-light d-flex align-items-center justify-content-between border-0 p-5">
+      <div class="text-start">
+        <h2 class="fw-bold">Macbook <span class="text-dark">Air</span></h2>
+        <p class="text-muted mb-3">
+          The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.
+        </p>
+        <button class="btn btn-outline-dark rounded-0 px-4 py-2">Shop Now</button>
+      </div>
+      <img src="/7.jpg" class="img-fluid w-50" alt="Macbook Air">
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ====== BROWSE BY CATEGORY ====== -->
+<section class="categories text-center py-5 my-5 bg-light">
+  <h3 class="fw-bold mb-5 text-uppercase text-dark">Browse by Category</h3>
+  
+  <div class="container">
+    <div class="row justify-content-center g-4">
+      @for (cat of categories; track cat.category_id) {
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div 
+            class="category-card shadow-sm border-0 rounded-4 p-3 h-100 d-flex flex-column align-items-center justify-content-center hover-effect"
+            (click)="filterByCategory(cat.category_id)"
+            style="cursor: pointer;"
+          >
+            <div class=" mb-3">
+              <i [class]="cat.icon + ' fs-1 text-dark'"></i>
+            </div>
+            <span class="fw-semibold text-dark">{{ cat.category_name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+
+  <!-- ====== NEW ARRIVALS ====== -->
+  <section class="new-arrivals container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="fw-bold">New Arrival</h4>
+      <a routerLink="/products" class="text-decoration-none text-primary">View All</a>
+    </div>
+    <div class="row g-4">
+      @for (product of products | slice:0:8; track product.id) {
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm position-relative product-card">
+            <img [src]="product.image_url" class="card-img-top img-fluid" [alt]="product.name" style="height:220px;object-fit:contain;">
+            <div class="card-body text-center">
+              <h6 class="card-title">{{product.name}}</h6>
+              <p class="fw-bold">${{product.price}}</p>
+              <a [routerLink]="['/product', product.id]" class="btn btn-dark btn-sm w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+
+
+  <!-- ====== DISCOUNTS ====== -->
+  <section class="discounts container my-5">
+    <h4 class="fw-bold mb-4">Discounts up to -50%</h4>
+    <div class="row g-4">
+      @for (product of products | slice:8:12; track product.id) {
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 text-center">
+            <img [src]="product.image" class="card-img-top p-3" [alt]="product.name" style="height:180px;object-fit:contain;">
+            <div class="card-body">
+              <h6>{{product.name}}</h6>
+              <p class="fw-bold text-danger">${{product.price}}</p>
+              <a [routerLink]="['/product', product.id]" class="btn btn-outline-dark btn-sm w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ====== SUMMER SALE ====== -->
+  <section class="summer-sale text-center text-white py-5 mt-5" style="background: url('/Banner2.png') no-repeat center center/cover; height: 300px;">
+    <h2 class="fw-bold mb-3">Big Summer Sale</h2>
+    <p class="mb-4">Come and save with the hottest offers of the season!</p>
+    <a routerLink="/products" class="btn btn-shop btn-outline-light mt-3">Shop Now</a>
+  </section>
+
+
+
+</div>

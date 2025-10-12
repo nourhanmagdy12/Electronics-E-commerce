@@ -1,0 +1,59 @@
+.auth-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, #1c1c1c, #545454, #a1a1a1);
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 550px;
+  background-color: #e4e4e4;
+  transition: all 0.3s ease;
+  border:none;
+}
+
+.auth-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1);
+}
+
+.form-floating > .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  color: #070707;
+}
+
+.form-floating > .form-control:focus {
+  border-color: #4b4b4b;
+  box-shadow: 0 0 10px rgba(186, 189, 189, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+label {
+  color: #aaa !important;
+}
+
+.btn-info {
+  background-color: #272727;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-info:hover {
+  background-color: #2e457a;
+  box-shadow: 0 0 15px rgba(125, 121, 194, 0.5);
+}
+
+a.text-info:hover {
+  text-decoration: underline;
+}
+
+.form-check-input {
+  background-color: transparent;
+  border-color: #2e457a;
+}
+
+.form-check-input:checked {
+  background-color: #2e457a;
+  border-color: #2e457a;
+}

@@ -1,0 +1,20 @@
+.main{
+    display: flex;
+    padding: 112px 160px;
+    align-items: center;
+    gap: 48px;
+    align-self: stretch;
+}
+.imgs{
+    display: flex;
+    width: 536px;
+    align-items: center;
+    gap: 48px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}

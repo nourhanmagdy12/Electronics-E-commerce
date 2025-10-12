@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
+import { FooterComponent } from './Components/footer/footer';
+import { Navbar } from './Components/navbar/navbar';
 import { RouterOutlet } from '@angular/router';
+import { Header } from './Components/header/header';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FooterComponent, Navbar, Header, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('Electronics-E-commerce');
 }
+export const appProviders = [ ];

@@ -1,0 +1,13 @@
+.card {
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+h3 {
+  color: #222;
+}
+
+.form-control {
+  background-color: #f9f9f9;
+  border: none;
+}

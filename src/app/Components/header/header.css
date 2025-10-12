@@ -1,0 +1,41 @@
+ 
+.header-categories {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.category-btn {
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: #f2f2f2;
+  color: #000;
+  border-radius: 20px;
+}
+
+.category-btn:active,
+.category-btn.active {
+  background-color: #454545;
+  color: #fff;
+  border-radius: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .input-group {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar form {
+    margin-top: 10px;
+  }
+}
+  

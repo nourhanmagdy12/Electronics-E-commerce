@@ -1,1 +1,115 @@
-<p>product-details works!</p>
+@if (product) {
+<div class="container my-5" >
+  <div class="row">
+    
+    <div class="col-lg-5 mb-4">
+      <div class="d-flex flex-column align-items-center">
+        <img [src]="product.image_url" class="img-fluid mb-3" style="max-height:350px;">
+        <div class="d-flex gap-2">
+          @for (img of product.gallery; track img) {
+            <img [src]="img" class="img-thumbnail" style="width:60px;height:60px;object-fit:cover;">
+          }
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-lg-7">
+      <h2 class="fw-bold">{{ product.name }}</h2>
+      <div class="fs-3 fw-bold mb-2">
+        ${{ product.price }}
+        @if (product.oldPrice) {
+          <span class="text-muted text-decoration-line-through fs-5">{{ product.oldPrice }}</span>
+        }
+      </div>
+      <div class="mb-3">
+        @if (product.colors) {
+          @for (color of product.colors; track color) {
+            <span class="d-inline-block rounded-circle me-2"
+                  [ngStyle]="{'background': color, 'width.px':24, 'height.px':24, 'border':'1px solid #ccc'}"></span>
+          }
+        }
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-outline-dark me-2" (click)="addToWishlist(product)">Add to Wishlist</button>
+        <button class="btn btn-dark">Add to Cart</button>
+      </div>
+      <div class="row mb-3">
+        @for (spec of mainSpecs; track spec.label) {
+          <div class="col-6 col-md-4 mb-2">
+            <div class="bg-light rounded p-2 small">
+              <div class="fw-bold">{{ spec.label }}</div>
+              <div>{{ spec.value }}</div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="mb-3 text-muted">{{ product.description }}</div>
+    </div>
+  </div>
+ 
+  <div class="card my-4">
+    <div class="card-body">
+      <h5 class="fw-bold mb-3">Details</h5>
+      <table class="table table-borderless">
+        @for (key of specKeys; track key) {
+          <tr>
+            <th class="w-25">{{ key }}</th>
+            <td>{{ product.specifications_json[key] }}</td>
+          </tr>
+        }
+      </table>
+    </div>
+  </div>
+  
+  <div class="my-4">
+    <h5 class="fw-bold mb-3">Reviews</h5>
+    <div class="d-flex align-items-center mb-3">
+      <div class="display-4 fw-bold me-3">{{ product.rating }}</div>
+      <div>
+        <div class="mb-1">
+          @for (_ of stars; track $index) {
+            <i class="bi" [ngClass]="{'bi-star-fill': $index < round(product.rating), 'bi-star': $index >= round(product.rating)}"></i>
+          }
+        </div>
+        <div class="small text-muted">{{ product.reviews_count }} reviews</div>
+      </div>
+    </div>
+    @for (review of staticReviews; track review.author) {
+      <div class="mb-3 border-bottom pb-2">
+        <div class="fw-bold">{{ review.author }}</div>
+        <div class="small text-muted mb-1">{{ review.date }}</div>
+        <div>{{ review.text }}</div>
+      </div>
+    }
+  </div>
+ 
+  <div class="my-4">
+    <h5 class="fw-bold mb-3">Related Products</h5>
+    <div class="row g-3">
+      @for (rel of related; track rel.id) {
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm h-100" (click)="goToProduct(rel.id)" style="cursor:pointer;">
+            <img [src]="rel.image_url" class="card-img-top p-3" [alt]="rel.name" style="height:140px;object-fit:contain;">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-2 fw-bold small text-muted">{{ rel.name }}</div>
+              <div class="fs-6 fw-bold mb-2">${{ rel.price }}</div>
+              <a [routerLink]="['/product', rel.id]" class="btn btn-dark mt-auto" (click)="$event.stopPropagation()">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+}
+@else {
+  <div class="d-flex justify-content-center align-items-center" style="height:80vh;">
+    <div class="text-center">
+      <i class="bi bi-exclamation-triangle-fill display-1 text-danger"></i>
+      <h3 class="mt-3">Product Not Found</h3>
+      <p class="text-muted">The product you are looking for does not exist.</p>
+    <a routerLink="/" class="btn btn-dark mt-2">Go to Home</a>
+  </div>
+</div>
+}
+

@@ -1,0 +1,81 @@
+.hero {
+  background: linear-gradient(135deg, #111 0%, #222 100%);
+  color: white;
+}
+.hero-img{
+    background: url(../../../../public/Banner1.png) 0px 72.308px / 100% 158.13% no-repeat ;
+  
+}
+
+.product-card {
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.wishlist-btn i {
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+.wishlist-btn:hover i {
+  transform: scale(1.2);
+}
+
+.featured img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.featured h2, 
+.featured h4 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.btn-outline-dark {
+  border-width: 1px;
+}
+
+
+
+.categories {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.category-card {
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #eaeaea;
+  padding:10px;
+  text-align: center;
+}
+
+.category-card .icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.category-card:hover  {
+  background-color: #2e67a4;
+ 
+}
+
+.category-card:hover i  {
+  color: white !important;
+}
+.category-card:hover span {
+  color: white !important;
+}
+
