@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 py-lg-1">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold" href="#">cyber</a>
+
+    <!-- Search -->
+    <form class="d-none d-md-flex ms-3 me-auto" style="width: 300px;">
+      <input class="form-control border-0 bg-light" type="search" placeholder="Search" aria-label="Search">
+    </form>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="bg-primary text-white rounded-pill" routerLink="home" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="bg-primary text-white rounded-pill" routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLinkActive="bg-primary text-white rounded-pill" routerLink="contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="bg-primary text-white rounded-pill" routerLink="products">Products-List</a>
+        </li>
+      </ul>
+
+      <!-- Icons -->
+      <ul class="navbar-nav d-flex flex-row gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-heart"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart"><i class="bi bi-cart"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-person"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

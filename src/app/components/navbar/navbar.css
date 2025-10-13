@@ -1,0 +1,19 @@
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+}
+
+form input {
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
