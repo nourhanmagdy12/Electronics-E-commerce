@@ -56,11 +56,10 @@ input.form-control:focus, .form-select:focus {
     flex-direction: row !important;
     gap: 1rem;
   }
-  .footer .row > div {
+  /* .footer .row > div {
     margin-bottom: 2rem;
-  }
+  } */
 }
-
 
 .btn-shop{
   width: fit-content;
@@ -71,4 +70,29 @@ input.form-control:focus, .form-select:focus {
   border-radius: 6px;
   border: 1px solid #fff;
   font-weight: 600;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
 }

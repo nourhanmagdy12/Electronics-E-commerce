@@ -1,23 +1,45 @@
 <div class="container my-5">
-  <div class="card shadow-sm p-4 mx-auto" style="max-width: 500px;">
-    <h3 class="text-center mb-4 fw-bold">User Profile</h3>
+  <div class="card shadow-lg border-0 p-4 mx-auto profile-card">
+    <div class="text-center mb-4">
+      <div class="profile-img mx-auto mb-3">
+      <i class="fa fa-user"></i>
+      </div>
+      <h3 class="fw-bold mb-1">{{ user?.username || 'User' }}</h3>
+     
+    </div>
+
+    <hr />
 
     <div *ngIf="user; else noUser">
       <div class="mb-3">
-        <label class="form-label fw-semibold text-muted">Name</label>
-        <div class="form-control">{{ user.user_name }}</div>
+        <label class="form-label fw-semibold text-muted">Full Name</label>
+        <div class="form-control bg-light">{{ user.username }}</div>
       </div>
 
       <div class="mb-3">
         <label class="form-label fw-semibold text-muted">Email</label>
-        <div class="form-control">{{ user.email }}</div>
+        <div class="form-control bg-light">{{ user.email }}</div>
       </div>
 
-      <button class="btn btn-dark w-100 mt-3" (click)="logout()">Logout</button>
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-muted">Phone Number</label>
+        <div class="form-control bg-light">{{ user.phone || 'Not Provided' }}</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-muted">Address</label>
+        <div class="form-control bg-light">{{ user.address || 'Not Provided' }}</div>
+      </div>
+
+      <div class="d-flex gap-4 mt-4">
+        <button class="btn rounded-2 btn-outline-dark flex-grow-1" >Edit Profile</button>
+        <button class="btn btn-outline-danger flex-grow-1" >Logout</button>
+      </div>
     </div>
 
     <ng-template #noUser>
-      <p class="text-center text-muted">No user data found.</p>
+      <p class="text-center text-muted mb-0">No user data found. Please log in first.</p>
     </ng-template>
   </div>
 </div>
+

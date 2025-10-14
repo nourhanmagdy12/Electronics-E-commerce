@@ -1,13 +1,30 @@
-.card {
-  border-radius: 15px;
-  background-color: #fff;
+.profile-card {
+  max-width: 550px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
 }
 
-h3 {
-  color: #222;
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+i{
+  font-size: 50px;
+  color: #4d4d4d;
+  
 
-.form-control {
-  background-color: #f9f9f9;
+}
+.profile-img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;}
+.form-control.bg-light {
   border: none;
+  cursor: default;
 }
