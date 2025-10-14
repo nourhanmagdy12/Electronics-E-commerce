@@ -1,10 +1,17 @@
 .hero {
-  background: linear-gradient(135deg, #111 0%, #222 100%);
-  color: white;
+ display: flex;
+padding: 0 160px;
+justify-content: space-between;
+align-items: center;
+align-content: center;
+row-gap: 24px;
+align-self: stretch;
+flex-wrap: wrap;
+
+color: white;
 }
 .hero-img{
-    background: url(../../../../public/Banner1.png) 0px 72.308px / 100% 158.13% no-repeat ;
-  
+    background: url(../../../../public/Banner1.png) 0px 60.308px / 100% 120.13% no-repeat ;
 }
 
 .product-card {
@@ -28,6 +35,51 @@
   height: 100%;
 }
 
+.image-wrapper {
+  width: 100%;
+  overflow: hidden; 
+}
+
+.ps5-img {
+  width: 150%;  
+  transform: translateX(-30%);  
+  object-fit: contain;
+}
+.content{
+  transform: translateX(-20%);
+
+}
+.image-wrapper-left,
+.image-wrapper-right-box
+.image-wrapper-right {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper-left img {
+  width: 60%;          
+  transform: translateX(-50%); 
+  object-fit: contain;
+}
+
+.image-wrapper-right-box img {
+  width: 130%;
+  transform: scaleX(-1) translateX(40%);
+  object-fit: contain;
+}
+
+
+.image-wrapper-right img {
+  width: 180%;   
+  height: 100%;             
+  transform: scale(2) translateX(40%);   
+  object-fit: fill;
+}
+
+
+
+
 .featured h2, 
 .featured h4 {
   font-family: 'Poppins', sans-serif;
@@ -37,8 +89,6 @@
 .btn-outline-dark {
   border-width: 1px;
 }
-
-
 
 .categories {
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
@@ -64,11 +114,11 @@
 .category-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  border-color: #007bff;
+  border-color: #303030;
 }
 
 .category-card:hover  {
-  background-color: #2e67a4;
+  background-color: #2a2a2a;
  
 }
 

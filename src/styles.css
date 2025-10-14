@@ -63,7 +63,6 @@ input.form-control:focus, .form-select:focus {
 
 
 .btn-shop{
-
   width: fit-content;
   padding: 16px 56px;
   justify-content: center;
@@ -71,4 +70,5 @@ input.form-control:focus, .form-select:focus {
   gap: 8px;
   border-radius: 6px;
   border: 1px solid #fff;
+  font-weight: 600;
 }
