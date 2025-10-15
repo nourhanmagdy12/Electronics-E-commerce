@@ -4,6 +4,7 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../Services/data-service';
 import { FormsModule } from '@angular/forms';
 import { ProductUtilsService } from '../../Services/product-utils.service';
+import { CartService } from '../../Services/cart-service';
 import { LoadingComponent } from '../loading/loading';
 
 @Component({
@@ -27,7 +28,8 @@ export class ProductsPage implements OnInit {
     private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router,
-    private productUtils: ProductUtilsService
+    private productUtils: ProductUtilsService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -92,28 +94,29 @@ export class ProductsPage implements OnInit {
     this.productUtils.goToProduct(this.router, id);
   }
 
-ngAfterViewInit() {
-   
-  setTimeout(() => {
-    const wishlist = this.productUtils.getWishlist();
-    this.products.forEach(p => {
-      p.isFavorite = wishlist.some(w => w.id === p.id);
-    });
-  }, 500);
-}
-
-addToWishlist(product: any, event: MouseEvent) {
-  event.stopPropagation();
-
-   
-  if (this.productUtils.isInWishlist(product.id)) {
-    this.productUtils.removeFromWishlist(product.id);
-    product.isFavorite = false;  
-  } else {
-    
-    this.productUtils.addToWishlist(product);
-    product.isFavorite = true;  
+  addToCart(product: any, event: MouseEvent) {
+    event.stopPropagation();
+    this.cartService.addToCart(product);
   }
-}
 
+  addToWishlist(product: any, event: MouseEvent) {
+    event.stopPropagation();
+    
+    if (this.productUtils.isInWishlist(product.id)) {
+      this.productUtils.removeFromWishlist(product.id);
+      product.isFavorite = false;  
+    } else {
+      this.productUtils.addToWishlist(product);
+      product.isFavorite = true;  
+    }
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const wishlist = this.productUtils.getWishlist();
+      this.products.forEach(p => {
+        p.isFavorite = wishlist.some(w => w.id === p.id);
+      });
+    }, 500);
+  }
 }

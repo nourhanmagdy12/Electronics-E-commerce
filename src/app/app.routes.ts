@@ -9,16 +9,24 @@ import { AuthGuard } from './Guards/auth-guard';
 import { LoadingComponent } from './Components/loading/loading';
 import { NotFoundComponent } from './Components/not-found/not-found';
 import { UserProfileComponent } from './Components/user-profile/user-profile';
+import { cart } from './Components/cart/cart';
+import { Checkout } from './Components/checkout/checkout';
+import { OrderSuccess } from './Components/order-success/order-success';
+
+
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'home', component: Home },
-  { path: 'products', component: ProductsPage, canActivate: [AuthGuard]  },
-  { path: 'product/:id', component: ProductDetails ,canActivate: [AuthGuard]  },
-  { path: 'wishlist', component: Wishlist, canActivate: [AuthGuard] },
-  { path: 'login', component: AuthLoginComponent },
-  { path: 'register', component: AuthRegisterComponent },
-  { path: 'loading', component: LoadingComponent },
-   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
-  { path: '**', component: NotFoundComponent }
+  { path: '', component: Home, pathMatch:'full', title:"Home" },
+  { path: 'home', component: Home, title:"Home" },
+  { path: 'products', component: ProductsPage, canActivate: [AuthGuard], title:"Products-List"  },
+  { path: 'product/:id', component: ProductDetails ,canActivate: [AuthGuard], title:"product"  },
+  { path: 'wishlist', component: Wishlist, canActivate: [AuthGuard], title:'Wishlist' },
+  { path: 'login', component: AuthLoginComponent, title:'Login' },
+  { path: 'register', component: AuthRegisterComponent, title:'Register' },
+  { path: 'loading', component: LoadingComponent, title:'Loading' },
+  { path: 'cart', component: cart, title:'Cart' },
+  { path: 'checkout', component: Checkout, title:'Checkout'},
+  { path: 'order-success', component: OrderSuccess, title:'Order Success'},
+   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard], title:'Profile' },
+  { path: '**', component: NotFoundComponent, title:'Not Found' }
 ];

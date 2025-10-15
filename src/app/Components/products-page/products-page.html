@@ -68,12 +68,10 @@
 
                   <div class="fs-5 fw-bold mb-3">${{ product.price }}</div>
 
-                  <a
-                    [routerLink]="['/product', product.id]"
+                  <button
                     class="btn btn-dark mt-auto"
-                    (click)="$event.stopPropagation()"
-                    >Add To Cart</a
-                  >
+                    (click)="addToCart(product, $event)"
+                    >Add To Cart</button>
                 </div>
               </div>
             </div>

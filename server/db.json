@@ -3,32 +3,38 @@
     {
       "category_id": 1,
       "category_name": "Phones",
-      "icon": "fa-solid fa-mobile-screen-button"
+      "icon": "fa-solid fa-mobile-screen-button",
+      "id": "4eb2"
     },
     {
       "category_id": 2,
       "category_name": "Smart Watches",
-      "icon": "fa-solid fa-clock"
+      "icon": "fa-solid fa-clock",
+      "id": "22b2"
     },
     {
       "category_id": 3,
       "category_name": "Cameras",
-      "icon": "fa-solid fa-camera"
+      "icon": "fa-solid fa-camera",
+      "id": "2a42"
     },
     {
       "category_id": 4,
       "category_name": "Headphones",
-      "icon": "fa-solid fa-headphones"
+      "icon": "fa-solid fa-headphones",
+      "id": "05c7"
     },
     {
       "category_id": 5,
       "category_name": "Computers",
-      "icon": "fa-solid fa-laptop"
+      "icon": "fa-solid fa-laptop",
+      "id": "ee51"
     },
     {
       "category_id": 6,
       "category_name": "Gaming",
-      "icon": "fa-solid fa-gamepad"
+      "icon": "fa-solid fa-gamepad",
+      "id": "9aab"
     }
   ],
   "users": [
@@ -36,7 +42,14 @@
       "user_id": "1",
       "username": "Nourhan",
       "email": "nourhan@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "id": "1a20"
+    },
+    {
+      "id": "b4cf",
+      "username": "ali_abdelsalam",
+      "email": "gipivi5061@dawhe.com",
+      "password": "3062003"
     }
   ],
   "products": [
