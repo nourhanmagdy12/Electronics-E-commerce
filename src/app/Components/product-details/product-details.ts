@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DataService } from '../../Services/data-service';
 import { ProductUtilsService } from '../../Services/product-utils.service';
+import { LoadingComponent } from '../loading/loading';
+
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, LoadingComponent],
   templateUrl: './product-details.html',
   styleUrls: ['./product-details.css']
 })
@@ -17,11 +19,40 @@ export class ProductDetails implements OnInit {
   related: any[] = [];
   mainSpecs: { label: string, value: any }[] = [];
   stars = Array(5);
-  staticReviews = [
-    { author: 'Grace Carey', date: '24 January,2023', text: 'This phone has IT storage and is durable. Plus all the new iPhones have a C port! Apple is phasing out the current ones! (All about the Benjamins) So if you want a phone that’s going to last grab an iPhone 14 pro max and get several cords and plugs.' },
-    { author: 'Ronald Richards', date: '24 January,2023', text: 'I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn’t be happier with my purchase! It was super easy to set up and the phone works and looks great. It truly was in excellent condition. Highly recommend!!' },
-    { author: 'Darcy King', date: '24 January,2023', text: 'I might be the only one to say this but the camera is a little funky. Hoping it will change with a software update; otherwise, love this phone! Came in great condition.' }
-  ];
+  Math = Math;
+  loading = true;
+  ratingBreakdown = [
+  { label: 'Excellent', percent: 90, count: 100 },
+  { label: 'Good', percent: 75, count: 11 },
+  { label: 'Average', percent: 40, count: 3 },
+  { label: 'Below Average', percent: 20, count: 8 },
+  { label: 'Poor', percent: 10, count: 1 },
+];
+
+staticReviews = [
+  {
+    author: 'Grace Carey',
+    date: '10 June, 2025',
+    rating: 4,
+    text: 'I was a bit nervous to be buying a secondhand phone but everything is PERFECT! Easy setup and great quality. Highly recommend!',
+    image: 'https://randomuser.me/api/portraits/men/8.jpg',
+  },
+  {
+    author: 'Ronald Richards',
+    date: '4 March, 2025',
+    rating: 5,
+    text: 'This phone has great performance and durable design. Definitely a worthy purchase!',
+    image: 'https://randomuser.me/api/portraits/men/19.jpg',
+  },
+  {
+    author: 'Darcy King',
+    date: '24 September, 2024',
+    rating: 4,
+    text: 'The only thing is the camera feels a bit funky. Otherwise, I love this phone!',
+    image: 'https://randomuser.me/api/portraits/women/2.jpg',
+    
+  },
+];
 
   constructor(
     private dataService: DataService,
@@ -31,14 +62,17 @@ export class ProductDetails implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.route.params.subscribe(params => {
       const id = +params['id'];
       if (!id) return;
+      
       this.dataService.getProductById(id).subscribe(prod => {
         if (!prod || Object.keys(prod).length === 0) {
           this.product = null;
           return;
         }
+        this.loading = false;
         this.product = prod;
         this.prepareMainSpecs();
         this.loadRelated();

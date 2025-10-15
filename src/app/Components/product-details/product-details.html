@@ -1,3 +1,7 @@
+@if (loading) {
+          <app-loading></app-loading>
+}@else{
+  
 @if (product) {
 <div class="container my-5" >
   <div class="row">
@@ -30,8 +34,8 @@
         }
       </div>
       <div class="mb-3">
-        <button class="btn btn-outline-dark me-2" (click)="addToWishlist(product)">Add to Wishlist</button>
-        <button class="btn btn-dark">Add to Cart</button>
+        <button class="btn btn-outline-dark me-2 px-3" (click)="addToWishlist(product)">Add to Wishlist</button>
+        <button class="btn btn-dark px-3">Add to Cart</button>
       </div>
       <div class="row mb-3">
         @for (spec of mainSpecs; track spec.label) {
@@ -61,27 +65,74 @@
     </div>
   </div>
   
-  <div class="my-4">
-    <h5 class="fw-bold mb-3">Reviews</h5>
-    <div class="d-flex align-items-center mb-3">
-      <div class="display-4 fw-bold me-3">{{ product.rating }}</div>
-      <div>
-        <div class="mb-1">
-          @for (_ of stars; track $index) {
-            <i class="bi" [ngClass]="{'bi-star-fill': $index < round(product.rating), 'bi-star': $index >= round(product.rating)}"></i>
-          }
+ <div class="reviews-section my-5">
+  <h4 class="fw-bold mb-4">Reviews</h4>
+
+  
+  <div class="d-flex flex-column flex-md-row align-items-center bg-light p-4 rounded shadow-sm mb-4">
+    <div class="text-center me-md-5 mb-4 mb-md-0">
+      <h1 class="fw-bold text-dark">{{ product.rating }}</h1>
+      <div class="text-warning mb-2">
+        <i *ngFor="let _ of stars; let i = index"
+           class="bi"
+           [ngClass]="{'bi-star-fill': i < Math.round(product.rating), 'bi-star': i >= Math.round(product.rating)}">
+        </i>
+      </div>
+      <small class="text-muted">of {{ product.reviews_count }} reviews</small>
+    </div>
+
+    <div class="flex-grow-1">
+      <div *ngFor="let rate of ratingBreakdown" class="d-flex align-items-center mb-2">
+        <div class="me-2 small text-muted" style="width: 90px;">{{ rate.label }}</div>
+        <div class="progress flex-grow-1" style="height: 6px;">
+          <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="rate.percent"></div>
         </div>
-        <div class="small text-muted">{{ product.reviews_count }} reviews</div>
+        <div class="ms-2 small text-muted">{{ rate.count }}</div>
       </div>
     </div>
-    @for (review of staticReviews; track review.author) {
-      <div class="mb-3 border-bottom pb-2">
-        <div class="fw-bold">{{ review.author }}</div>
-        <div class="small text-muted mb-1">{{ review.date }}</div>
-        <div>{{ review.text }}</div>
-      </div>
-    }
   </div>
+
+ 
+  <div class="mb-4">
+    <input type="text" class="form-control rounded-3 shadow-sm" placeholder="Leave Comment" />
+  </div>
+
+ <div 
+  @for (review of staticReviews; track review.author) 
+  class="review-card bg-white p-3 rounded-3 shadow-sm mb-3"
+>
+  <div class="d-flex align-items-start">
+    <img 
+      [src]="review.image" 
+      alt="{{ review.author }}" 
+      class="rounded-circle me-3" 
+      width="50" 
+      height="50"
+    >
+    <div class="flex-grow-1">
+      <div class="d-flex justify-content-between align-items-center">
+        <h6 class="fw-bold mb-0">{{ review.author }}</h6>
+        <small class="text-muted">{{ review.date }}</small>
+      </div>
+      <div class="text-warning mb-2">
+        @for (_ of stars; let i = $index) {
+          <i 
+            class="bi" 
+            [ngClass]="{
+              'bi-star-fill': i < review.rating, 
+              'bi-star': i >= review.rating
+            }"
+          ></i>
+        }
+      </div>
+      <p class="text-muted small mb-2">{{ review.text }}</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
  
   <div class="my-4">
     <h5 class="fw-bold mb-3">Related Products</h5>
@@ -113,3 +164,5 @@
 </div>
 }
 
+
+}

@@ -25,7 +25,7 @@ ngOnInit() {
       error: err => console.error('Error loading categories:', err)
     });
 
-    this.dataService.getProducts({ _sort: 'id', _order: 'desc', _limit: 8 })
+    this.dataService.getProducts({ _sort: 'id', _order: 'desc' })
       .subscribe({
         next: products => {
           console.log('Products loaded:', products);

@@ -1,5 +1,5 @@
 <div class="container-fluid home-page p-0">
-  <!-- ====== HERO SECTION ====== -->
+ 
   <section class="hero d-flex flex-column flex-md-row align-items-center bg-dark justify-content-between text-white px-4 px-md-5" style=" height: 90%;">
     <div class="hero-content col-md-6 px-5">
       <h5 class="fw-bold text-uppercase text-secondary">Pro.Beyond.</h5>
@@ -10,7 +10,7 @@
     <div class="hero-img" style="width: 450px; height: 100vh;flex-shrink: 0; margin-right: 40px;"></div>
   </section>
 
-  <!-- ====== FEATURED BOXES ====== -->
+   
 <section class="featured  container-fluid px-0" >
   <div class="row g-0 align-items-stretch">
 
@@ -74,7 +74,7 @@
 </section>
 
 
-  <!-- ====== BROWSE BY CATEGORY ====== -->
+   
 <section class="categories text-center py-5 my-5 bg-light">
   <h3 class="fw-bold mb-5 text-uppercase text-dark">Browse by Category</h3>
   
@@ -99,8 +99,8 @@
 </section>
 
 
-  <!-- ====== NEW ARRIVALS ====== -->
-  <section class="new-arrivals container my-5">
+  
+  <section class="new-arrivals container my-5 ">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h4 class="fw-bold">New Arrival</h4>
       <div class="d-flex align-items-center gap-2" routerLink="/products" style="cursor: pointer;">
@@ -130,11 +130,11 @@
 
 
 
-  <!-- ====== DISCOUNTS ====== -->
+ 
   <section class="discounts container my-5">
     <h4 class="fw-bold mb-4">Discounts up to -50%</h4>
     <div class="row g-4">
-      @for (product of products | slice:0:4; track product.id) {
+      @for (product of products | slice:10:14; track product.id) {
         <div class="col-6 col-md-4 col-lg-3">
           <div class="card h-100 border-0 shadow-sm position-relative product-card">
             <img [src]="product.image_url" class="card-img-top img-fluid" [alt]="product.name" style="height:220px;object-fit:contain;">
@@ -149,7 +149,7 @@
     </div>
   </section>
 
-  <!-- ====== SUMMER SALE ====== -->
+  
   <section class="summer-sale text-center text-white py-5 mt-5" style="background: url('/Banner2.png') no-repeat center center/cover; height: 350px;">
     <h2 class="fw-bold my-3 ">Big Summer Sale</h2>
     <p class="mb-4">Come and save with the hottest offers of the season!</p>
