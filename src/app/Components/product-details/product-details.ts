@@ -19,7 +19,6 @@ export class ProductDetails implements OnInit {
   related: any[] = [];
   mainSpecs: { label: string, value: any }[] = [];
   stars = Array(5);
-  Math = Math;
   loading = true;
   ratingBreakdown = [
   { label: 'Excellent', percent: 90, count: 100 },

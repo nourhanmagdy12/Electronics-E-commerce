@@ -2,167 +2,154 @@
           <app-loading></app-loading>
 }@else{
   
-@if (product) {
-<div class="container my-5" >
-  <div class="row">
-    
-    <div class="col-lg-5 mb-4">
-      <div class="d-flex flex-column align-items-center">
-        <img [src]="product.image_url" class="img-fluid mb-3" style="max-height:350px;">
-        <div class="d-flex gap-2">
-          @for (img of product.gallery; track img) {
-            <img [src]="img" class="img-thumbnail" style="width:60px;height:60px;object-fit:cover;">
-          }
+  @if (product) {
+  <div class="container my-5" >
+    <div class="row">
+      
+      <div class="col-lg-5 mb-4">
+        <div class="d-flex flex-column align-items-center">
+          <img [src]="product.image_url" class="img-fluid mb-3" style="max-height:350px;">
+          <div class="d-flex gap-2">
+            @for (img of product.gallery; track img) {
+              <img [src]="img" class="img-thumbnail" style="width:60px;height:60px;object-fit:cover;">
+            }
+          </div>
         </div>
       </div>
-    </div>
-   
-    <div class="col-lg-7">
-      <h2 class="fw-bold">{{ product.name }}</h2>
-      <div class="fs-3 fw-bold mb-2">
-        ${{ product.price }}
-        @if (product.oldPrice) {
-          <span class="text-muted text-decoration-line-through fs-5">{{ product.oldPrice }}</span>
-        }
-      </div>
-      <div class="mb-3">
-        @if (product.colors) {
-          @for (color of product.colors; track color) {
-            <span class="d-inline-block rounded-circle me-2"
-                  [ngStyle]="{'background': color, 'width.px':24, 'height.px':24, 'border':'1px solid #ccc'}"></span>
+    
+      <div class="col-lg-7">
+        <h2 class="fw-bold">{{ product.name }}</h2>
+        <div class="fs-3 fw-bold mb-2">
+          ${{ product.price }}
+          @if (product.oldPrice) {
+            <span class="text-muted text-decoration-line-through fs-5">{{ product.oldPrice }}</span>
           }
-        }
-      </div>
-      <div class="mb-3">
-        <button class="btn btn-outline-dark me-2 px-3" (click)="addToWishlist(product)">Add to Wishlist</button>
-        <button class="btn btn-dark px-3">Add to Cart</button>
-      </div>
-      <div class="row mb-3">
-        @for (spec of mainSpecs; track spec.label) {
-          <div class="col-6 col-md-4 mb-2">
-            <div class="bg-light rounded p-2 small">
-              <div class="fw-bold">{{ spec.label }}</div>
-              <div>{{ spec.value }}</div>
+        </div>
+        <div class="mb-3">
+          @if (product.colors) {
+            @for (color of product.colors; track color) {
+              <span class="d-inline-block rounded-circle me-2"
+                    [ngStyle]="{'background': color, 'width.px':24, 'height.px':24, 'border':'1px solid #ccc'}"></span>
+            }
+          }
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-outline-dark me-2 px-3" (click)="addToWishlist(product)">Add to Wishlist</button>
+          <button class="btn btn-dark px-3">Add to Cart</button>
+        </div>
+        <div class="row mb-3">
+          @for (spec of mainSpecs; track spec.label) {
+            <div class="col-6 col-md-4 mb-2">
+              <div class="bg-light rounded p-2 small">
+                <div class="fw-bold">{{ spec.label }}</div>
+                <div>{{ spec.value }}</div>
+              </div>
             </div>
-          </div>
-        }
+          }
+        </div>
+        <div class="mb-3 text-muted">{{ product.description }}</div>
       </div>
-      <div class="mb-3 text-muted">{{ product.description }}</div>
     </div>
-  </div>
- 
-  <div class="card my-4">
-    <div class="card-body">
-      <h5 class="fw-bold mb-3">Details</h5>
-      <table class="table table-borderless">
-        @for (key of specKeys; track key) {
-          <tr>
-            <th class="w-25">{{ key }}</th>
-            <td>{{ product.specifications_json[key] }}</td>
-          </tr>
-        }
-      </table>
-    </div>
-  </div>
   
- <div class="reviews-section my-5">
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="fw-bold mb-3">Details</h5>
+        <table class="table table-borderless">
+          @for (key of specKeys; track key) {
+            <tr>
+              <th class="w-25">{{ key }}</th>
+              <td>{{ product.specifications_json[key] }}</td>
+            </tr>
+          }
+        </table>
+      </div>
+    </div>
+    
+  <div class="reviews-section my-5">
   <h4 class="fw-bold mb-4">Reviews</h4>
 
-  
+ 
   <div class="d-flex flex-column flex-md-row align-items-center bg-light p-4 rounded shadow-sm mb-4">
     <div class="text-center me-md-5 mb-4 mb-md-0">
       <h1 class="fw-bold text-dark">{{ product.rating }}</h1>
       <div class="text-warning mb-2">
-        <i *ngFor="let _ of stars; let i = index"
-           class="bi"
-           [ngClass]="{'bi-star-fill': i < Math.round(product.rating), 'bi-star': i >= Math.round(product.rating)}">
-        </i>
+        @for (_ of stars; let i = $index; track $index) {
+          <i class="bi" [ngClass]="{'bi-star-fill': i < round(product.rating),'bi-star': i >= round(product.rating)}"></i>
+        }
       </div>
       <small class="text-muted">of {{ product.reviews_count }} reviews</small>
     </div>
 
     <div class="flex-grow-1">
-      <div *ngFor="let rate of ratingBreakdown" class="d-flex align-items-center mb-2">
-        <div class="me-2 small text-muted" style="width: 90px;">{{ rate.label }}</div>
-        <div class="progress flex-grow-1" style="height: 6px;">
-          <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="rate.percent"></div>
-        </div>
-        <div class="ms-2 small text-muted">{{ rate.count }}</div>
-      </div>
-    </div>
-  </div>
-
- 
-  <div class="mb-4">
-    <input type="text" class="form-control rounded-3 shadow-sm" placeholder="Leave Comment" />
-  </div>
-
- <div 
-  @for (review of staticReviews; track review.author) 
-  class="review-card bg-white p-3 rounded-3 shadow-sm mb-3"
->
-  <div class="d-flex align-items-start">
-    <img 
-      [src]="review.image" 
-      alt="{{ review.author }}" 
-      class="rounded-circle me-3" 
-      width="50" 
-      height="50"
-    >
-    <div class="flex-grow-1">
-      <div class="d-flex justify-content-between align-items-center">
-        <h6 class="fw-bold mb-0">{{ review.author }}</h6>
-        <small class="text-muted">{{ review.date }}</small>
-      </div>
-      <div class="text-warning mb-2">
-        @for (_ of stars; let i = $index) {
-          <i 
-            class="bi" 
-            [ngClass]="{
-              'bi-star-fill': i < review.rating, 
-              'bi-star': i >= review.rating
-            }"
-          ></i>
-        }
-      </div>
-      <p class="text-muted small mb-2">{{ review.text }}</p>
-    </div>
-  </div>
-</div>
-
-  </div>
-</div>
-
- 
-  <div class="my-4">
-    <h5 class="fw-bold mb-3">Related Products</h5>
-    <div class="row g-3">
-      @for (rel of related; track rel.id) {
-        <div class="col-6 col-md-3">
-          <div class="card border-0 shadow-sm h-100" (click)="goToProduct(rel.id)" style="cursor:pointer;">
-            <img [src]="rel.image_url" class="card-img-top p-3" [alt]="rel.name" style="height:140px;object-fit:contain;">
-            <div class="card-body d-flex flex-column">
-              <div class="mb-2 fw-bold small text-muted">{{ rel.name }}</div>
-              <div class="fs-6 fw-bold mb-2">${{ rel.price }}</div>
-              <a [routerLink]="['/product', rel.id]" class="btn btn-dark mt-auto" (click)="$event.stopPropagation()">Buy Now</a>
-            </div>
+      @for (rate of ratingBreakdown; track rate.label) {
+        <div class="d-flex align-items-center mb-2">
+          <div class="me-2 small text-muted" style="width: 90px;">{{ rate.label }}</div>
+          <div class="progress flex-grow-1" style="height: 6px;">
+            <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="rate.percent"></div>
           </div>
+          <div class="ms-2 small text-muted">{{ rate.count }}</div>
         </div>
       }
     </div>
   </div>
-</div>
-}
-@else {
-  <div class="d-flex justify-content-center align-items-center" style="height:80vh;">
-    <div class="text-center">
-      <i class="bi bi-exclamation-triangle-fill display-1 text-danger"></i>
-      <h3 class="mt-3">Product Not Found</h3>
-      <p class="text-muted">The product you are looking for does not exist.</p>
-    <a routerLink="/" class="btn btn-dark mt-2">Go to Home</a>
+
+  
+  <div class="mb-4">
+    <input type="text" class="form-control rounded-3 shadow-sm" placeholder="Leave Comment" />
   </div>
+
+  @for (review of staticReviews; track review.author) {
+    <div class="review-card bg-white p-3 rounded-3 shadow-sm mb-3">
+      <div class="d-flex align-items-start">
+        <img [src]="review.image" alt="{{ review.author }}" class="rounded-circle me-3" width="50" height="50">
+        <div class="flex-grow-1">
+          <div class="d-flex justify-content-between align-items-center">
+            <h6 class="fw-bold mb-0">{{ review.author }}</h6>
+            <small class="text-muted">{{ review.date }}</small>
+          </div>
+
+          <div class="text-warning mb-2">
+            @for (_ of stars; let i = $index; track $index) {
+              <i class="bi" [ngClass]="{'bi-star-fill': i < review.rating, 'bi-star': i >= review.rating}"></i>
+            }
+          </div>
+          <p class="text-muted small mb-2">{{ review.text }}</p>
+        </div>
+      </div>
+    </div>
+  }
 </div>
-}
+
+
+    <div class="my-4">
+      <h5 class="fw-bold mb-3">Related Products</h5>
+      <div class="row g-3">
+        @for (rel of related; track rel.id) {
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm h-100" (click)="goToProduct(rel.id)" style="cursor:pointer;">
+              <img [src]="rel.image_url" class="card-img-top p-3" [alt]="rel.name" style="height:140px;object-fit:contain;">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2 fw-bold small text-muted">{{ rel.name }}</div>
+                <div class="fs-6 fw-bold mb-2">${{ rel.price }}</div>
+                <a [routerLink]="['/product', rel.id]" class="btn btn-dark mt-auto" (click)="$event.stopPropagation()">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  }
+  @else {
+    <div class="d-flex justify-content-center align-items-center" style="height:80vh;">
+      <div class="text-center">
+        <i class="bi bi-exclamation-triangle-fill display-1 text-danger"></i>
+        <h3 class="mt-3">Product Not Found</h3>
+        <p class="text-muted">The product you are looking for does not exist.</p>
+      <a routerLink="/" class="btn btn-dark mt-2">Go to Home</a>
+    </div>
+  </div>
+  }
 
 
 }
