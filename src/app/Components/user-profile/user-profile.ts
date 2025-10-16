@@ -23,8 +23,11 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  logout() {
+ logout() {
+  if (confirm('Are you sure you want to logout?')) {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+}
+
 }

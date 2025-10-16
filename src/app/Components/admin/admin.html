@@ -1,0 +1,39 @@
+<div class="auth-wrapper d-flex align-items-center justify-content-center">
+  <div class="admin-card shadow p-2 rounded-4 bg-light text-dark w-100" style="max-width:900px;">
+    <h2 class="text-center mb-2 fw-bold text-dark" style="font-size:1.6rem;">Admin Dashboard</h2>
+
+    <div *ngIf="loading" class="text-center mb-2">Loading...</div>
+
+    <div class="d-flex flex-wrap justify-content-around mb-2">
+      <div class="stat-card p-1 rounded-3 text-center" style="flex:1 1 45%; max-width:180px; margin:4px;">
+        <h6 class="mb-1" style="font-size:0.85rem;">👥 Users</h6>
+        <p class="fs-6 mb-0">{{ usersCount }}</p>
+      </div>
+
+      <div class="stat-card p-1 rounded-3 text-center" style="flex:1 1 45%; max-width:180px; margin:4px;">
+        <h6 class="mb-1" style="font-size:0.85rem;">🛒 Orders</h6>
+        <p class="fs-6 mb-0">{{ ordersCount }}</p>
+      </div>
+
+      <div class="stat-card p-1 rounded-3 text-center" style="flex:1 1 45%; max-width:180px; margin:4px;">
+        <h6 class="mb-1" style="font-size:0.85rem;">📦 Products</h6>
+        <p class="fs-6 mb-0">{{ productsCount }}</p>
+      </div>
+
+      <div class="stat-card p-1 rounded-3 text-center" style="flex:1 1 45%; max-width:180px; margin:4px;">
+        <h6 class="mb-1" style="font-size:0.85rem;">💰 Revenue</h6>
+        <p class="fs-6 mb-0">{{ totalRevenue | currency }}</p>
+      </div>
+    </div>
+
+    <h5 class="mb-1" style="font-size:0.95rem; text-align:center;">📈 Revenue by Date</h5>
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [legend]="chartOptions.legend"
+      style="max-width:100%; height:220px; margin:0 auto;">
+    </apx-chart>
+  </div>
+</div>
