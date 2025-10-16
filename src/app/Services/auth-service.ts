@@ -1,29 +1,31 @@
+// frontend/src/app/Services/auth-service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+interface RegisterData {
+  username?: string;
+  fname?: string;
+  lname?: string;
+  email: string;
+  password: string;
+  role?: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  private api = 'http://localhost:3000/users';
+  private API_URL = 'http://localhost:5000/user';
 
   constructor(private http: HttpClient) {}
 
-  register(user: any): Observable<any> {
-    return this.http.post(this.api, user);
+  register(userData: RegisterData): Observable<any> {
+    // إذا حابة تستخدمى fname, lname بدل username
+    return this.http.post(`${this.API_URL}/register`, userData);
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.get<any[]>(`${this.api}?email=${email}&password=${password}`)
-      .pipe(map(users => {
-        if (users.length > 0) {
-          const u = users[0];
-          return {
-            user_id: u.user_id,  
-            email: u.email,
-            username: u.username
-          };
-        }
-        return null;
-      }));
+    return this.http.post(`${this.API_URL}/login`, { email, password });
   }
 }

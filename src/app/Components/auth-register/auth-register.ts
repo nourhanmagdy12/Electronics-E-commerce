@@ -20,35 +20,44 @@ export class AuthRegisterComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  register() {
-    if (!this.username || !this.email || !this.password || !this.confirmPassword) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    if (this.password !== this.confirmPassword) {
-      alert('Passwords do not match.');
-      return;
-    }
-
-    this.loading = true;
-    const newUser = {
-      username: this.username,
-      email: this.email,
-      password: this.password
-    };
-
-    this.authService.register(newUser).subscribe({
-      next: () => {
-        this.loading = false;
-        alert(`Welcome, ${this.username}! Your account has been created successfully.`);
-        this.router.navigate(['/login']);
-      },
-      error: () => {
-        this.loading = false;
-        alert('Error occurred while creating your account. Try again later.');
-      }
-    });
+register() {
+  if (!this.username || !this.email || !this.password || !this.confirmPassword) {
+    alert('Please fill in all fields.');
+    return;
   }
+
+  if (this.password !== this.confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
+
+  this.loading = true;
+
+  // ✂️ تقسيم الاسم الكامل إلى أول و آخر
+  const nameParts = this.username.trim().split(' ');
+  const fname = nameParts[0];
+  const lname = nameParts.slice(1).join(' ') || ''; // الباقي لو فيه اسمين أو أكتر
+
+  const newUser = {
+    fname,
+    lname,
+    email: this.email,
+    password: this.password,
+    role: 'user'
+  };
+
+  this.authService.register(newUser).subscribe({
+    next: (res) => {
+      this.loading = false;
+      alert('Account created successfully!');
+      this.router.navigate(['/login']);
+    },
+    error: (err) => {
+      this.loading = false;
+      alert(err.error?.error || 'Error occurred. Try again later.');
+    }
+  });
+}
+
 }
 

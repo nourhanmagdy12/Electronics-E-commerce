@@ -35,7 +35,7 @@
         </div>
         <div class="mb-3">
           <button class="btn btn-outline-dark me-2 px-3" (click)="addToWishlist(product)">Add to Wishlist</button>
-          <button class="btn btn-dark px-3">Add to Cart</button>
+          <button class="btn btn-dark px-3" (click)="addToCart(product)">Add to Cart</button>
         </div>
         <div class="row mb-3">
           @for (spec of mainSpecs; track spec.label) {

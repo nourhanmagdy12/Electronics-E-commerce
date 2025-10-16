@@ -1,0 +1,295 @@
+<div class="container-fluid py-5 bg-light checkout-page" style="min-height: 100vh;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="d-flex justify-content-between align-items-center mb-5 step-indicator">
+          @for (item of [
+            { num: 1, label: 'Address' },
+            { num: 2, label: 'Shipping' },
+            { num: 3, label: 'Payment' }
+          ]; track item.num) {
+            <div class="d-flex align-items-center">
+              <div class="step-circle" [class.active]="step() >= item.num">
+                Step {{ item.num }}
+              </div>
+              <div class="step-label" [class.active]="step() >= item.num">{{ item.label }}</div>
+            </div>
+            @if (item.num < 3) {
+              <div class="step-line" [class.active]="step() > item.num"></div>
+            }
+          }
+        </div>
+
+        <div class="bg-white p-4 p-md-5 shadow-sm rounded-3">
+          
+          @if (step() === 1) {
+            <h4 class="fw-bold mb-4">Select Address</h4>
+            
+            @for (address of addresses(); track address.id) {
+              <div 
+                class="address-option p-3 mb-3 border rounded d-flex align-items-start justify-content-between"
+                [class.selected]="selectedAddressId() === address.id"
+                (click)="selectedAddressId.set(address.id)"
+              >
+                <div class="form-check d-flex align-items-start">
+                  <input 
+                    class="form-check-input mt-1 me-3" 
+                    type="radio" 
+                    name="selectedAddress" 
+                    [id]="'address' + address.id" 
+                    [checked]="selectedAddressId() === address.id"
+                  >
+                  <label class="form-check-label" [for]="'address' + address.id">
+                    <strong class="d-block">{{ address.street }} 
+                      <span class="badge rounded-pill bg-dark text-white ms-2" *ngIf="address.label === 'HOME'">HOME</span>
+                      <span class="badge rounded-pill bg-secondary text-white ms-2" *ngIf="address.label === 'OFFICE'">OFFICE</span>
+                    </strong>
+                    <div class="text-muted small">
+                      {{ address.cityStateZip }}
+                      <br>
+                      ({{ address.phone }})
+                    </div>
+                  </label>
+                </div>
+                <div class="address-actions ms-3">
+                  <i class="bi bi-pencil me-2 edit-icon" (click)="editAddress(address)"></i>
+                  <i class="bi bi-x delete-icon" (click)="deleteAddress(address.id)"></i>
+                </div>
+              </div>
+            }
+
+            <div class="text-center mt-4">
+              <a href="#" class="add-new-link d-flex align-items-center justify-content-center" (click)="showAddressForm.set(true); $event.preventDefault()">
+                <i class="bi bi-plus-circle me-2"></i> Add New Address
+              </a>
+            </div>
+
+            <!-- نموذج إضافة عنوان جديد -->
+            @if (showAddressForm()) {
+              <div class="address-form mt-4 p-3 border rounded">
+                <h5 class="mb-3">{{ editingAddressId() ? 'Edit Address' : 'Add New Address' }}</h5>
+                <div class="mb-3">
+                  <label class="form-label">Address Label</label>
+                  <select class="form-select" [(ngModel)]="newAddress().label">
+                    <option value="HOME">Home</option>
+                    <option value="OFFICE">Office</option>
+                    <option value="OTHER">Other</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Street Address</label>
+                  <input type="text" class="form-control" [(ngModel)]="newAddress().street" placeholder="Street address">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">City, State, ZIP</label>
+                  <input type="text" class="form-control" [(ngModel)]="newAddress().cityStateZip" placeholder="City, State, ZIP">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" [(ngModel)]="newAddress().phone" placeholder="Phone number">
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-outline-secondary me-2" (click)="resetAddressForm()">Cancel</button>
+                  @if (editingAddressId()) {
+                    <button class="btn btn-primary" (click)="saveEditedAddress()">Save Changes</button>
+                  } @else {
+                    <button class="btn btn-primary" (click)="addNewAddress()">Add Address</button>
+                  }
+                </div>
+              </div>
+            }
+          }
+
+          @if (step() === 2) {
+            <h4 class="fw-bold mb-4">Shipment Method</h4>
+
+            <div class="shipping-option p-3 mb-3 border rounded d-flex align-items-center justify-content-between"
+                 [class.selected]="selectedShippingPrice() === 0"
+                 (click)="selectedShippingPrice.set(0)">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="shippingMethod" id="shippingFree" [checked]="selectedShippingPrice() === 0">
+                    <label class="form-check-label ms-3" for="shippingFree">
+                        <strong>Free</strong> Regular shipment
+                    </label>
+                </div>
+                <span class="text-muted">17 Oct, 2025</span>
+            </div>
+
+            <div class="shipping-option p-3 mb-3 border rounded d-flex align-items-center justify-content-between"
+                 [class.selected]="selectedShippingPrice() === 8.5"
+                 (click)="selectedShippingPrice.set(8.5)">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="shippingMethod" id="shippingExpress" [checked]="selectedShippingPrice() === 8.5">
+                    <label class="form-check-label ms-3" for="shippingExpress">
+                        <strong>${{ 8.5 | number: '1.2-2' }}</strong> Get your delivery as soon as possible
+                    </label>
+                </div>
+                <span class="text-muted">1 Oct, 2025</span>
+            </div>
+
+            <div class="shipping-option p-3 border rounded d-flex align-items-center justify-content-between"
+                 [class.selected]="selectedShippingPrice() === -1"
+                 (click)="selectedShippingPrice.set(-1)"> <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="radio" name="shippingMethod" id="shippingSchedule" [checked]="selectedShippingPrice() === -1">
+                    <label class="form-check-label ms-3" for="shippingSchedule">
+                        <strong>Schedule</strong> Pick a date when you want to get your delivery
+                    </label>
+                </div>
+                <select class="form-select w-auto select-date" [disabled]="selectedShippingPrice() !== -1">
+                    <option selected>Select Date</option>
+                    <option value="1">20 Oct, 2025</option>
+                    <option value="2">25 Oct, 2025</option>
+                </select>
+            </div>
+          }
+
+          @if (step() === 3) {
+            <h4 class="fw-bold mb-4">Payment</h4>
+            
+            <ul class="nav nav-pills mb-4 payment-tabs" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="credit-card-tab" data-bs-toggle="pill" data-bs-target="#credit-card" type="button" role="tab">Credit Card</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="paypal-tab" data-bs-toggle="pill" data-bs-target="#paypal" type="button" role="tab">PayPal</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="paypal-credit-tab" data-bs-toggle="pill" data-bs-target="#paypal-credit" type="button" role="tab">PayPal Credit</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="credit-card" role="tabpanel" aria-labelledby="credit-card-tab">
+                    
+                    <div class="credit-card-visual mb-4 p-4 rounded-3 text-white shadow">
+                        <div class="d-flex justify-content-end mb-4">
+                            <div class="card-chip"></div> 
+                        </div>
+                        <div class="card-number-display mb-3">
+                            {{ cardNumber() }}
+                        </div>
+                        <div class="d-flex justify-content-between small">
+                            <div>
+                                <div class="text-uppercase opacity-75">Cardholder</div>
+                                <div class="card-name-display fw-bold text-uppercase">
+                                    {{ cardholderName() || 'Cardholder Name' }}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-uppercase opacity-75">Expires</div>
+                                <div class="card-expiry-display fw-bold">
+                                    {{ expDate() || 'MM/YY' }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <label for="cardholderName" class="form-label small text-muted">Cardholder Name</label>
+                            <input type="text" class="form-control" id="cardholderName" placeholder="Cardholder Name" [ngModel]="cardholderName()" (ngModelChange)="cardholderName.set($event)" name="cardholderName">
+                        </div>
+                        <div class="col-12">
+                            <label for="cardNumber" class="form-label small text-muted">Card Number</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="cardNumber" 
+                                placeholder="4085 9536 8475 9530" 
+                                [ngModel]="cardNumber()" 
+                                (input)="onCardNumberInput($event)" 
+                                name="cardNumber" 
+                                maxlength="19"
+                            >
+                        </div>
+                        <div class="col-6">
+                            <label for="expDate" class="form-label small text-muted">Exp Date</label>
+                            <input type="text" class="form-control" id="expDate" placeholder="MM/YY" [ngModel]="expDate()" (ngModelChange)="expDate.set($event)" name="expDate" maxlength="5">
+                        </div>
+                        <div class="col-6">
+                            <label for="cvv" class="form-label small text-muted">CVV</label>
+                            <input type="text" class="form-control" id="cvv" placeholder="CVV" [ngModel]="cvv()" (ngModelChange)="cvv.set($event)" name="cvv" maxlength="4">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sameAddressCheck" checked>
+                                <label class="form-check-label small" for="sameAddressCheck">
+                                    Same as billing address
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                </div>
+          }
+
+          <div class="d-flex justify-content-end mt-5">
+            <button class="btn btn-outline-dark me-3 back-btn" (click)="prevStep()" *ngIf="step() > 1">Back</button>
+            
+            <button class="btn btn-dark next-btn" (click)="nextStep()" *ngIf="step() < 3">Next</button>
+            
+            <button class="btn btn-dark pay-btn"  *ngIf="step() === 3" (click)="completeOrder()">Pay</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-5">
+        <div class="order-summary bg-white p-4 p-md-4 shadow-sm rounded-3 border">
+            <h5 class="fw-bold mb-4">Summary</h5>
+
+            @for (item of cartService.items; track item.id) {
+                <div class="d-flex align-items-center mb-3">
+                    <div class="product-icon me-3 bg-light rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; overflow: hidden;">
+                        <img [src]="item.image_url" alt="{{ item.name }}" class="img-fluid" style="object-fit: contain; width: 100%; height: 100%;">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold small">{{ item.name }}</div>
+                        <div class="text-muted small">Qty: {{ item.quantity }}</div>
+                    </div>
+                    <strong class="price-text">${{ item.price * item.quantity | number: '1.0-2' }}</strong>
+                </div>
+            }
+            
+            @if (cartService.items.length === 0) {
+                <div class="alert alert-info">
+                    Your cart is empty. Please add products to your cart first.
+                </div>
+            }
+            <hr>
+
+            <div class="mb-3">
+                <div class="fw-bold small">Address</div>
+                <div class="text-muted small">{{ getSelectedAddress()?.street }}, {{ getSelectedAddress()?.cityStateZip }}</div>
+            </div>
+
+            <div class="mb-4">
+                <div class="fw-bold small">Shipment method</div>
+                <div class="text-muted small">{{ estimatedShipping() === 0 ? 'Free' : (estimatedShipping() | currency:'USD':'symbol') + ' Standard' }}</div>
+            </div>
+            
+            <hr>
+
+            <ul class="list-unstyled mb-0 small">
+                <li class="d-flex justify-content-between mb-2">
+                    <span>Subtotal</span>
+                    <strong>${{ cartService.subtotal | number: '1.0-2' }}</strong>
+                </li>
+                <li class="d-flex justify-content-between mb-2">
+                    <span>Estimated Tax</span>
+                    <strong>${{ estimatedTax() | number: '1.0-2' }}</strong>
+                </li>
+                <li class="d-flex justify-content-between mb-3">
+                    <span>Estimated shipping & Handling</span>
+                    <strong>${{ estimatedShipping() | number: '1.0-2' }}</strong>
+                </li>
+                <li class="d-flex justify-content-between pt-2 border-top total-row">
+                    <span class="fw-bold fs-6">Total</span>
+                    <strong class="fs-6 total-price-text">${{ total() | number: '1.0-2' }}</strong>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
