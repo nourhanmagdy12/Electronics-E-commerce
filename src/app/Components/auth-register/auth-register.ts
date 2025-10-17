@@ -16,6 +16,7 @@ export class AuthRegisterComponent {
   email = '';
   password = '';
   confirmPassword = '';
+  role = 'user';  
   loading = false;
 
   constructor(private router: Router, private authService: AuthService) {}
@@ -33,24 +34,22 @@ register() {
 
   this.loading = true;
 
-  // ✂️ تقسيم الاسم الكامل إلى أول و آخر
-  const nameParts = this.username.trim().split(' ');
-  const fname = nameParts[0];
-  const lname = nameParts.slice(1).join(' ') || ''; // الباقي لو فيه اسمين أو أكتر
-
   const newUser = {
-    fname,
-    lname,
+    username: this.username,
     email: this.email,
     password: this.password,
-    role: 'user'
+    role: this.role
   };
 
   this.authService.register(newUser).subscribe({
     next: (res) => {
       this.loading = false;
-      alert('Account created successfully!');
-      this.router.navigate(['/login']);
+      if (res.user_id) {
+        alert('Account created successfully!');
+        this.router.navigate(['/login']);
+      } else {
+        alert(res.error || 'Error occurred. Try again later.');
+      }
     },
     error: (err) => {
       this.loading = false;

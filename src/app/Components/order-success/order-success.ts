@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../Services/cart-service';
+import { DataService } from '../../Services/data-service';
+import { ToastService } from '../../Services/toast-service';
 
-// واجهة لبيانات تأكيد الطلب
+ 
 interface OrderSummary {
   orderNumber: string;
   date: Date;
@@ -17,6 +19,12 @@ interface OrderSummary {
   paymentMethod: string;
 }
 
+interface OrderStatus {
+  status: string;
+  description: string;
+  timestamp: Date;
+}
+
 @Component({
   selector: 'app-order-success',
   standalone: true,
@@ -26,17 +34,39 @@ interface OrderSummary {
 })
 export class OrderSuccess implements OnInit {
   orderSummary!: OrderSummary;
+  orderStatuses: OrderStatus[] = [
+    { status: 'Processing', description: 'Your order is being processed', timestamp: new Date() },
+    { status: 'Shipped', description: 'Your order has been shipped', timestamp: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) },
+    { status: 'Delivered', description: 'Your order has been delivered', timestamp: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) }
+  ];
+  showOrderDetails: boolean = false;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private dataService: DataService, private toastService: ToastService) {}
 
   ngOnInit(): void {
-    // جلب بيانات الطلب الحقيقية من CartService
+    // Simulate email confirmation
+    this.toastService.showToast('Order confirmation email sent!', 'success');
+
     const lastOrder = this.cartService.getLastOrder();
-    
+
     if (lastOrder) {
       this.orderSummary = lastOrder;
+
+      // Post order to server
+      this.dataService.addOrder({
+        id: Date.now().toString(),
+        ...lastOrder,
+        date: lastOrder.date.toISOString()
+      }).subscribe({
+        next: () => {
+          console.log('Order saved to server');
+        },
+        error: (err) => {
+          console.error('Error saving order to server:', err);
+        }
+      });
     } else {
-      // بيانات احتياطية في حالة عدم وجود طلب محفوظ
+
       this.orderSummary = {
         orderNumber: '53A09B27CD1',
         date: new Date(),

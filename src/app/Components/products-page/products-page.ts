@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { DataService } from '../../Services/data-service';
 import { ProductUtilsService } from '../../Services/product-utils.service';
 import { CartService } from '../../Services/cart-service';
+import { ToastService } from '../../Services/toast-service';
 import { LoadingComponent } from '../loading/loading';
 import { LazyImgDirective } from '../../Directives/lazy-img-directive';
 
@@ -29,7 +30,8 @@ export class ProductsPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private productUtils: ProductUtilsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit() {
@@ -94,6 +96,7 @@ export class ProductsPage implements OnInit {
   addToCart(product: any, event: MouseEvent) {
     event.stopPropagation();
     this.cartService.addToCart(product);
+    this.showToast(`${product.name} has been added to your cart!`);
   }
 
   addToWishlist(product: any, event: MouseEvent) {
@@ -101,10 +104,16 @@ export class ProductsPage implements OnInit {
     if (this.productUtils.isInWishlist(product.id)) {
       this.productUtils.removeFromWishlist(product.id);
       product.isFavorite = false;
+      this.showToast(`${product.name} has been removed from your wishlist!`);
     } else {
       this.productUtils.addToWishlist(product);
       product.isFavorite = true;
+      this.showToast(`${product.name} has been added to your wishlist!`);
     }
+  }
+
+  showToast(message: string) {
+    this.toastService.showToast(message, 'success');
   }
 
   ngAfterViewInit() {
@@ -116,7 +125,7 @@ export class ProductsPage implements OnInit {
     }, 500);
   }
 
-  // لازم للـ *ngFor
+ 
   trackById(index: number, item: any): any {
     return item.id;
   }

@@ -30,11 +30,17 @@ export class AuthLoginComponent {
       this.loading = false;
       if (res?.token) {
         localStorage.setItem('token', res.token);
-        localStorage.setItem('user', JSON.stringify({ email: this.email }));
+        // Store full user object including role
+        if (res.user) {
+          localStorage.setItem('user', JSON.stringify(res.user));
+        } else {
+          // Fallback if user not in response, but assume it is
+          localStorage.setItem('user', JSON.stringify({ email: this.email, role: 'user' }));
+        }
         alert('Login successful!');
         this.router.navigate(['/']);
       } else {
-        alert('Invalid email or password.');
+        alert(res?.error || 'Invalid email or password.');
       }
     },
     error: (err) => {

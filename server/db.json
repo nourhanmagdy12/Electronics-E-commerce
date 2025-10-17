@@ -50,8 +50,17 @@
       "username": "ali_abdelsalam",
       "email": "gipivi5061@dawhe.com",
       "password": "3062003"
+    },
+    {
+      "id": "2d49",
+      "user_id": "1760718868364",
+      "username": "Salma",
+      "email": "salma@gmail.com",
+      "password": "salma@22",
+      "role": "admin"
     }
   ],
+  "orders": [],
   "products": [
     {
       "id": "1",

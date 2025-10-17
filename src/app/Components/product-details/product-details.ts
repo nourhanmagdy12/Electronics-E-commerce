@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { DataService } from '../../Services/data-service';
 import { ProductUtilsService } from '../../Services/product-utils.service';
 import { CartService } from '../../Services/cart-service';
+import { ToastService } from '../../Services/toast-service';
 import { LoadingComponent } from '../loading/loading';
 
 
@@ -59,7 +60,8 @@ staticReviews = [
     private route: ActivatedRoute,
     private router: Router,
     private productUtils: ProductUtilsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit() {
@@ -115,10 +117,16 @@ loadRelated() {
 
   addToWishlist(product: any) {
     this.productUtils.addToWishlist(product);
+    this.showToast(`${product.name} has been added to your wishlist!`);
   }
 
   addToCart(product: any) {
     this.cartService.addToCart(product);
+    this.showToast(`${product.name} has been added to your cart!`);
+  }
+
+  showToast(message: string) {
+    this.toastService.showToast(message, 'success');
   }
 
   goToProduct(id: number) {

@@ -22,7 +22,7 @@
       </div>
     </form>
 
-    <ul class="navbar-nav align-items-center flex-row gap-3">
+    <ul class="navbar-nav align-items-center justify-content-center flex-row gap-3">
       <li class="nav-item mx-2" routerLink="/wishlist">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="none" class="icon">
           <path
@@ -47,6 +47,33 @@
         </svg>
       </li>
 
+      @if (isAdmin) {
+      <li class="nav-item mt-2 ms-1" routerLink="/dashboard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="none" class="icon">
+          <path
+            d="M12 2L2 7L12 12L22 7L12 2Z"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2 17L12 22L22 17"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2 12L12 17L22 12"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </li>
+      }
       @if (isRegistered) {
       <li class="nav-item" routerLink="/profile">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="none" class="icon">

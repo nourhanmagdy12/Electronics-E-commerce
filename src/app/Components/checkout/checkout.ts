@@ -1,9 +1,10 @@
 import { Component, OnInit, computed, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../../Services/cart-service';
 import { CartItem } from '../../Models/cart-item';
 import { Router, RouterLink } from '@angular/router'; // تم التأكد من استيراد Router
+import { ToastService } from '../../Services/toast-service';
 
 // تعريف واجهات البيانات
 export interface Address {
@@ -22,10 +23,10 @@ export interface Address {
 	styleUrl: './checkout.css'
 })
 export class Checkout implements OnInit {
-	// حالة الخطوة الحالية
+	 
 	step: WritableSignal<number> = signal(1);
 
-	// بيانات العناوين
+ 
 	addresses: WritableSignal<Address[]> = signal([
 		{
 			id: 1,
@@ -42,20 +43,15 @@ export class Checkout implements OnInit {
 			phone: '(704) 555-0127'
 		},
 	]);
-
-	// العنوان المحدد (الذي تم اختياره)
+ 
 	selectedAddressId: WritableSignal<number> = signal(1);
-
-	// طريقة الشحن المحددة (سعرها)
-	selectedShippingPrice: WritableSignal<number> = signal(0); // 0 for Free
-
-	// بيانات الدفع (لمحاكاة شكل البطاقة)
+	selectedShippingPrice: WritableSignal<number> = signal(0);  
 	cardNumber: WritableSignal<string> = signal('4085 9536 8475 9530');
 	cardholderName: WritableSignal<string> = signal('');
 	expDate: WritableSignal<string> = signal('');
 	cvv: WritableSignal<string> = signal('');
 
-	// نموذج العنوان الجديد
+	 
 	newAddress: WritableSignal<Address> = signal({
 		id: 0,
 		label: 'HOME',
@@ -64,14 +60,14 @@ export class Checkout implements OnInit {
 		phone: ''
 	});
 
-	// حالة إظهار نموذج العنوان الجديد
+	 
 	showAddressForm: WritableSignal<boolean> = signal(false);
 
-	// حالة تحرير العنوان
+	 
 	editingAddressId: WritableSignal<number | null> = signal(null);
 
 	// تم حقن Router هنا
-	constructor(public cartService: CartService, private router: Router) {}
+	constructor(public cartService: CartService, private router: Router, private toastService: ToastService) {}
 
 	ngOnInit(): void {
 		// Initialize estimated tax based on cart service tax
@@ -88,6 +84,14 @@ export class Checkout implements OnInit {
 
 	// الدوال للتحكم بالخطوات
 	nextStep(): void {
+		if (this.step() === 1 && !this.validateAddressStep()) {
+			this.toastService.showToast('Please select or add an address', 'error');
+			return;
+		}
+		if (this.step() === 2 && !this.validateShippingStep()) {
+			this.toastService.showToast('Please select a shipping method', 'error');
+			return;
+		}
 		if (this.step() < 3) {
 			this.step.update(currentStep => currentStep + 1);
 		}
@@ -99,39 +103,74 @@ export class Checkout implements OnInit {
 		}
 	}
 
+	validateAddressStep(): boolean {
+		return this.selectedAddressId() > 0;
+	}
+
+	validateShippingStep(): boolean {
+		return this.selectedShippingPrice() >= 0;
+	}
+
 	// **********************************************
 	// الدالة الجديدة لإتمام الطلب والتوجيه
 	// **********************************************
 	completeOrder(): void {
-		// 1. منطق التحقق من صحة الدفع يجب أن يتم هنا
+		// 1. Check if cart is empty
+		if (this.cartService.items.length === 0) {
+			this.toastService.showToast('Your cart is empty', 'error');
+			return;
+		}
+
+		// 2. Validate payment information
+		if (!this.validatePaymentStep()) {
+			this.toastService.showToast('Please fill in all payment details', 'error');
+			return;
+		}
+
+		// 3. منطق التحقق من صحة الدفع يجب أن يتم هنا
 		console.log("Processing Payment and Completing Order...");
 
-		// 2. الحصول على العنوان المحدد ومعلومات الدفع
+		// 4. الحصول على العنوان المحدد ومعلومات الدفع
 		const selectedAddress = this.getSelectedAddress();
-		const addressText = selectedAddress ? 
-			`${selectedAddress.street}, ${selectedAddress.cityStateZip}` : 
+		const addressText = selectedAddress ?
+			`${selectedAddress.street}, ${selectedAddress.cityStateZip}` :
 			'2118 Thornridge Cir, Syracuse, Connecticut 35624';
-		
+
 		const paymentMethod = `Visa **** ${this.cardNumber().slice(-4)}`;
-		
-		// 3. حفظ بيانات الطلب قبل مسح السلة
+
+		// 5. حفظ بيانات الطلب قبل مسح السلة
 		this.cartService.saveOrderData(addressText, paymentMethod);
 
-		// 4. محو سلة المشتريات
+		// 6. محو سلة المشتريات
 		this.cartService.clearCart();
 
-		// 5. التوجيه البرمجي إلى صفحة تأكيد الطلب
+		// 7. Show success message
+		this.toastService.showToast('Order placed successfully!', 'success');
+
+		// 8. التوجيه البرمجي إلى صفحة تأكيد الطلب
 		this.router.navigate(['/order-success']);
 	}
 	// **********************************************
 
+	validatePaymentStep(): boolean {
+		return this.cardNumber().trim() !== '' &&
+			   this.cardholderName().trim() !== '' &&
+			   this.expDate().trim() !== '' &&
+			   this.cvv().trim() !== '';
+	}
+
 	// دالة إضافة عنوان جديد
 	addNewAddress(): void {
+		if (!this.newAddress().street.trim() || !this.newAddress().cityStateZip.trim() || !this.newAddress().phone.trim()) {
+			this.toastService.showToast('Please fill in all address fields', 'error');
+			return;
+		}
 		const newId = Math.max(0, ...this.addresses().map(a => a.id)) + 1;
 		const addressToAdd = { ...this.newAddress(), id: newId };
 
 		this.addresses.update(currentAddresses => [...currentAddresses, addressToAdd]);
 		this.selectedAddressId.set(newId);
+		this.toastService.showToast('Address added successfully', 'success');
 		this.resetAddressForm();
 	}
 

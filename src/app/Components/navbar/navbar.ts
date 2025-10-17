@@ -16,6 +16,15 @@ export class Navbar {
     return !!localStorage.getItem('user');
   }
 
+  get isAdmin(): boolean {
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      return user.role === 'admin';
+    }
+    return false;
+  }
+
   constructor(private router: Router) {}
 
   onSearch() {
