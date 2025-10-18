@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { DataService } from '../../Services/data-service';
+import { ProductUtilsService } from '../../Services/product-utils.service';
 
 @Component({
   selector: 'app-home',
@@ -12,24 +13,34 @@ import { DataService } from '../../Services/data-service';
 })
 export class Home implements OnInit {
   categories: any[] = [];
- wishlist: any[] = [];
   products: any[] = [];
 
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    private productUtils: ProductUtilsService
+  ) {}
 
-  constructor(private dataService: DataService, private router: Router) {}
+  ngOnInit() {
+    this.loadCategories();
+    this.loadProducts();
+  }
 
-ngOnInit() {
-
+  loadCategories() {
     this.dataService.getCategories().subscribe({
       next: cats => (this.categories = cats),
       error: err => console.error('Error loading categories:', err)
     });
+  }
 
+  loadProducts() {
     this.dataService.getProducts({ _sort: 'id', _order: 'desc' })
       .subscribe({
         next: products => {
-          console.log('Products loaded:', products);
-          this.products = products;
+          this.products = products.map(p => ({
+            ...p,
+            isFavorite: this.productUtils.isInWishlist(p.product_id)
+          }));
         },
         error: err => console.error('Error loading products:', err)
       });
@@ -39,25 +50,12 @@ ngOnInit() {
     this.router.navigate(['/products'], { queryParams: { category: catId } });
   }
 
-
   toggleWishlist(product: any) {
-    const index = this.wishlist.findIndex(p => p.id === product.id);
-    if (index !== -1) {
-      this.wishlist.splice(index, 1);
-    } else {
-      this.wishlist.push(product);
-    }
-    localStorage.setItem('wishlist', JSON.stringify(this.wishlist));
+    this.productUtils.addToWishlist(product);
+    product.isFavorite = this.productUtils.isInWishlist(product.id);
   }
 
   isInWishlist(product: any): boolean {
-    return this.wishlist.some(p => p.id === product.id);
-  }
-
-  loadWishlist() {
-    const saved = localStorage.getItem('wishlist');
-    if (saved) {
-      this.wishlist = JSON.parse(saved);
-    }
+    return this.productUtils.isInWishlist(product.id);
   }
 }
