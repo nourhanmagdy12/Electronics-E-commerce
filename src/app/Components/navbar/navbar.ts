@@ -27,7 +27,10 @@ export class Navbar {
 
   constructor(private router: Router) {}
 
-  onSearch() {
-    this.router.navigate(['/products'], { queryParams: { search: this.search || null } });
-  }
+onSearch() {
+  this.router.navigate(['/products'], { queryParams: { search: this.search || null } }).then(() => {
+    this.search = '';
+  });
+}
+
 }
