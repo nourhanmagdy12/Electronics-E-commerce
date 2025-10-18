@@ -7,7 +7,7 @@ export class LocalStorageService {
 
   constructor() { }
 
-  // Generic methods for localStorage operations
+  
   getItem(key: string): any {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : null;
@@ -21,7 +21,6 @@ export class LocalStorageService {
     localStorage.removeItem(key);
   }
 
-  // Specific methods for common data
   getUsers(): any[] {
     return this.getItem('users') || [];
   }
@@ -62,7 +61,6 @@ export class LocalStorageService {
     this.setItem('currentUser', user);
   }
 
-  // Helper methods for CRUD operations
   addToArray(key: string, item: any): void {
     const array = this.getItem(key) || [];
     array.push(item);

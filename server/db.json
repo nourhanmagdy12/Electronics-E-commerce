@@ -58,6 +58,22 @@
       "email": "salma@gmail.com",
       "password": "salma@22",
       "role": "admin"
+    },
+    {
+      "id": "15b0",
+      "user_id": "1760720633450",
+      "username": "Haya",
+      "email": "Haya@gmail.com",
+      "password": "Haya@22",
+      "role": "user"
+    },
+    {
+      "id": "b41d",
+      "user_id": "1760749394664",
+      "username": "Saleh Osman",
+      "email": "salehosman@gmail.com",
+      "password": "Osman@22",
+      "role": "admin"
     }
   ],
   "orders": [],
