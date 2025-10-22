@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { DataService } from '../../Services/data-service';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,19 +13,32 @@ import { Router } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   user: any = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit() {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      this.user = JSON.parse(storedUser);
+      const userData = JSON.parse(storedUser);
+      // Fetch full user details from db.json
+      this.dataService.getUser(userData.user_id).subscribe({
+        next: (fullUser) => {
+          this.user = fullUser;
+        },
+        error: (err) => {
+          console.error('Error fetching user data:', err);
+          this.user = userData; // Fallback to localStorage
+        }
+      });
     } else {
       this.router.navigate(['/login']);
     }
   }
 
-  logout() {
+ logout() {
+  if (confirm('Are you sure you want to logout?')) {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+}
+
 }

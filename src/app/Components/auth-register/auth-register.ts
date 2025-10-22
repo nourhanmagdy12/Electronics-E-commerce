@@ -16,39 +16,47 @@ export class AuthRegisterComponent {
   email = '';
   password = '';
   confirmPassword = '';
+  role = 'user';  
   loading = false;
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  register() {
-    if (!this.username || !this.email || !this.password || !this.confirmPassword) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    if (this.password !== this.confirmPassword) {
-      alert('Passwords do not match.');
-      return;
-    }
-
-    this.loading = true;
-    const newUser = {
-      username: this.username,
-      email: this.email,
-      password: this.password
-    };
-
-    this.authService.register(newUser).subscribe({
-      next: () => {
-        this.loading = false;
-        alert(`Welcome, ${this.username}! Your account has been created successfully.`);
-        this.router.navigate(['/login']);
-      },
-      error: () => {
-        this.loading = false;
-        alert('Error occurred while creating your account. Try again later.');
-      }
-    });
+register() {
+  if (!this.username || !this.email || !this.password || !this.confirmPassword) {
+    alert('Please fill in all fields.');
+    return;
   }
+
+  if (this.password !== this.confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
+
+  this.loading = true;
+
+  const newUser = {
+    username: this.username,
+    email: this.email,
+    password: this.password,
+    role: this.role
+  };
+
+  this.authService.register(newUser).subscribe({
+    next: (res) => {
+      this.loading = false;
+      if (res.user_id) {
+        alert('Account created successfully!');
+        this.router.navigate(['/login']);
+      } else {
+        alert(res.error || 'Error occurred. Try again later.');
+      }
+    },
+    error: (err) => {
+      this.loading = false;
+      alert(err.error?.error || 'Error occurred. Try again later.');
+    }
+  });
+}
+
 }
 

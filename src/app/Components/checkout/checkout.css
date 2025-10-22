@@ -1,0 +1,192 @@
+/* General Styling for a dark/minimalist theme */
+:host {
+    --cyber-black: #1a1a1a;
+    --cyber-gray: #333333;
+    --cyber-light-gray: #f8f9fa;
+    --cyber-accent: #000000;
+}
+
+.checkout-page {
+    background-color: var(--cyber-light-gray) !important;
+}
+
+/* --- Step Indicator Styling --- */
+.step-indicator {
+    padding: 0 10%; /* Adjust padding for lines to spread */
+}
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0; /* Hide 'Step X' text as in the original image */
+    position: absolute;
+    z-index: 10;
+}
+
+.step-label {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #6c757d;
+    position: relative;
+    top: -25px; /* Adjust position to match image */
+    left: -15px;
+    transform: translateX(15px);
+}
+
+.step-circle.active {
+    background-color: var(--cyber-accent);
+    color: white;
+    box-shadow: 0 0 0 4px var(--cyber-accent);
+}
+
+.step-label.active {
+    font-weight: bold;
+    color: var(--cyber-accent);
+}
+
+.step-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #e9ecef;
+    margin: 0 -10px; /* Overlap with circle positioning */
+}
+
+.step-line.active {
+    background-color: var(--cyber-accent);
+}
+
+/* --- Address & Shipping Options Styling --- */
+.address-option, .shipping-option {
+    cursor: pointer;
+    transition: all 0.2s;
+    border-color: #e9ecef !important;
+}
+
+.address-option:hover, .shipping-option:hover {
+    background-color: #f7f7f7;
+}
+
+.address-option.selected, .shipping-option.selected {
+    border-color: var(--cyber-accent) !important;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 0 1px var(--cyber-accent);
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+/* Custom Checkbox/Radio in Address/Shipping */
+.form-check-input:checked {
+    background-color: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+}
+
+.address-actions i {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #6c757d;
+    transition: color 0.1s;
+}
+
+.address-actions .edit-icon:hover {
+    color: #007bff;
+}
+
+.address-actions .delete-icon:hover {
+    color: #dc3545;
+}
+
+.add-new-link {
+    color: var(--cyber-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* --- Payment Tab Styling --- */
+.payment-tabs .nav-link {
+    color: var(--cyber-accent);
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin-right: 10px;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+
+.payment-tabs .nav-link.active {
+    background-color: var(--cyber-accent);
+    color: white;
+    border-color: var(--cyber-accent);
+}
+
+/* --- Credit Card Visual Styling --- */
+.credit-card-visual {
+    background: linear-gradient(135deg, var(--cyber-black) 0%, var(--cyber-gray) 100%);
+    min-height: 200px;
+}
+
+.card-chip {
+    width: 40px;
+    height: 30px;
+    background-color: #ffc107;
+    border-radius: 5px;
+}
+
+.card-number-display {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* --- Form Control Styling --- */
+.form-control {
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+}
+
+/* --- Summary Styling --- */
+.order-summary {
+    border-color: #e9ecef !important;
+}
+
+.product-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.price-text {
+    font-size: 1rem;
+    color: var(--cyber-accent);
+}
+
+.total-row {
+    color: var(--cyber-accent);
+}
+
+.total-price-text {
+    color: var(--cyber-accent);
+    font-size: 1.2rem !important;
+}
+
+/* --- Button Styling --- */
+.btn-dark, .pay-btn {
+    background-color: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+}
+
+.btn-outline-dark, .back-btn {
+    color: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+}

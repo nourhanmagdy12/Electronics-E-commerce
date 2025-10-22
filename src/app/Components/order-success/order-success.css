@@ -1,0 +1,117 @@
+:host {
+    --cyber-accent: #000000; 
+    --success-color: #28a745;
+}
+
+.order-success-page {
+    background-color: #f8f9fa; 
+    justify-content: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.success-card {
+    border: none;
+    border-top: 5px solid var(--success-color);
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.4);
+    animation: successPulse 2s ease-in-out infinite;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.success-title {
+    color: var(--cyber-accent);
+}
+
+
+.order-details-box {
+    background-color: #f4f4f4;
+    border: 1px solid #e9ecef;
+    font-size: 20px;
+}
+
+.order-details-box h6 {
+    color: var(--cyber-accent);
+    margin-bottom: 0.2rem;
+}
+
+.order-details-box p {
+    margin-top: 0;
+}
+
+.total-price-text {
+ 
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 1rem !important;
+}
+
+.view-order-btn {
+    background-color: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+}
+
+.view-order-btn:hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.back-home-btn {
+    color: var(--cyber-accent);
+    border-color: var(--cyber-accent);
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+}
+
+.order-tracking {
+    border: 1px solid #e9ecef;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #dee2e6;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-marker {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-marker i {
+    font-size: 0.8rem;
+}
+
+.timeline-content h6 {
+    color: var(--cyber-accent);
+}

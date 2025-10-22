@@ -1,29 +1,54 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { DataService } from './data-service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  private api = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) {}
 
-  register(user: any): Observable<any> {
-    return this.http.post(this.api, user);
+  register(userData: any): Observable<any> {
+    return this.dataService.getUsers().pipe(
+      switchMap(users => {
+        const existingUser = users.find((u: any) => u.email === userData.email);
+        if (existingUser) {
+          return of({ error: 'User already exists' });
+        }
+
+        const newUser = {
+          id: Math.random().toString(16).slice(2, 6),  
+          user_id: Date.now().toString(),
+          username: userData.username || `${userData.fname} ${userData.lname}`,
+          email: userData.email,
+          password: userData.password,
+          role: userData.role || 'user'
+        };
+
+        return this.dataService.addUser(newUser);
+      })
+    );
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.get<any[]>(`${this.api}?email=${email}&password=${password}`)
-      .pipe(map(users => {
-        if (users.length > 0) {
-          const u = users[0];
+    return this.dataService.getUsers().pipe(
+      map(users => {
+        const user = users.find(
+          (u: any) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
+        );
+
+        if (user) {
+          const { password: _, ...userWithoutPassword } = user;
           return {
-            user_id: u.user_id,  
-            email: u.email,
-            username: u.username
+            token: 'fake-token',
+            user: userWithoutPassword
           };
+        } else {
+          return { error: 'Invalid email or password.' };
         }
-        return null;
-      }));
+      })
+    );
   }
 }

@@ -1,5 +1,5 @@
 <div class="container my-5">
-  <!-- Sort by rating and price -->
+  <!-- Sort -->
   <div class="d-flex align-items-center justify-content-end gap-2 m-4 sort-container">
     <label class="fw-semibold text-muted mb-0">Sort by:</label>
     <select class="form-select form-select-sm w-auto" [(ngModel)]="sortBy" (change)="onSortChange()">
@@ -9,81 +9,56 @@
   </div>
 
   <div class="row">
-    <!-- Products Grid -->
     <section class="col-lg-12 mb-4">
       <div class="row g-4">
-        @if (loading) {
+
+        <!-- Loading -->
+        <ng-container *ngIf="loading">
           <app-loading></app-loading>
-        } @else {
-          @for (product of products; track product.id) {
+        </ng-container>
+
+        <!-- Products -->
+        <ng-container *ngIf="!loading">
+          <ng-container *ngFor="let product of products; trackBy: trackById">
             <div class="col-12 col-sm-6 col-md-3">
-              <div
-                class="card border-0 shadow-sm h-100 position-relative"
-                (click)="goToProduct(product.id)"
-                style="cursor:pointer;"
-              >
-               
-                <button
-                  class="btn position-absolute top-0 end-0 m-1 z-1"
-                  (click)="addToWishlist(product, $event)"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 32 32"
-                    class="heart"
-                    [attr.fill]="product.isFavorite ? 'rgb(232, 7, 7)' : 'none'"
-                    [attr.stroke]="product.isFavorite ? 'none' : 'black'"
-                  >
-                    <path
-                      d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
+              <div class="card border-0 shadow-sm h-100 position-relative"
+                   (click)="goToProduct(product.id)" style="cursor:pointer;">
+
+                <!-- Wishlist button -->
+                <button class="btn position-absolute top-0 end-0 m-1 z-1" (click)="addToWishlist(product, $event)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" class="heart"
+                       [attr.fill]="product.isFavorite ? 'rgb(232, 7, 7)' : 'none'"
+                       [attr.stroke]="product.isFavorite ? 'none' : 'black'">
+                    <path d="M11 7C8.239 7 6 9.216 6 11.95C6 14.157 6.875 19.395 15.488 24.69C15.6423 24.7839 15.8194 24.8335 16 24.8335C16.1806 24.8335 16.3577 24.7839 16.512 24.69C25.125 19.395 26 14.157 26 11.95C26 9.216 23.761 7 21 7C18.239 7 16 10 16 10C16 10 13.761 7 11 7Z"
+                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
 
-                <img
-                  [src]="product.image_url"
-                  class="card-img-top img-fluid"
-                  [alt]="product.name"
-                  style="height:220px;object-fit:contain;"
-                />
+                <!-- Product Image with Lazy Load -->
+                <img appLazyImg="{{ product.image_url }}"
+                     class="card-img-top img-fluid"
+                     [alt]="product.name"
+                     style="height:220px; object-fit:contain;"/>
 
                 <div class="card-body d-flex flex-column">
-                  <div class="mb-2 fw-bold small text-muted">
-                    {{ product.name }}
-                  </div>
-
+                  <div class="mb-2 fw-bold small text-muted">{{ product.name }}</div>
                   <div class="mb-2">
-                    <span class="badge bg-success">
-                      {{ product.rating || 0 }} ★
-                    </span>
-                    <small class="text-muted ms-1">
-                      ({{ product.reviews_count || 0 }} reviews)
-                    </small>
+                    <span class="badge bg-success">{{ product.rating || 0 }} ★</span>
+                    <small class="text-muted ms-1">({{ product.reviews_count || 0 }} reviews)</small>
                   </div>
-
                   <div class="fs-5 fw-bold mb-3">${{ product.price }}</div>
-
-                  <a
-                    [routerLink]="['/product', product.id]"
-                    class="btn btn-dark mt-auto"
-                    (click)="$event.stopPropagation()"
-                    >Add To Cart</a
-                  >
+                  <button class="btn btn-dark mt-auto" (click)="addToCart(product, $event)">Add To Cart</button>
                 </div>
               </div>
             </div>
-          }
-          @if (products.length === 0) {
-            <div class="text-center text-muted mt-5">
-              <p>No products found for this category.</p>
-            </div>
-          }
-        }
+          </ng-container>
+
+          <!-- No products message -->
+          <div *ngIf="products.length === 0" class="text-center text-muted mt-5">
+            <p>No products found for this category.</p>
+          </div>
+        </ng-container>
+
       </div>
     </section>
   </div>

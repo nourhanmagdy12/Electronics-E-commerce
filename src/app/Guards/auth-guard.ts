@@ -7,12 +7,10 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     if (localStorage.getItem('user')) {
-      return true;  
+      return true;
     }
-
-    alert('Please register or login first to access this page.');  
-    this.router.navigate(['/login']);  
+    alert('Please register or login first.');
+    this.router.navigate(['/login']);
     return false;
   }
 }
-
